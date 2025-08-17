@@ -505,7 +505,7 @@ function ExportPokemon(pokeInfo) {
 	for (var stat in pokemon.ivs) {
 		var iv = pokemon.ivs[stat] ? pokemon.ivs[stat] : 0;
 		if (iv < 31) {
-			IVs_Array.push(iv + " " + calc.Stats.displayStat(stat));
+			IVs_Array.push(31 + " " + calc.Stats.displayStat(stat));
 		}
 	}
 	if (IVs_Array.length > 0) {
