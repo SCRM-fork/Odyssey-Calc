@@ -516,8 +516,8 @@ function smogonAnalysis(pokemonName) {
 function refresh_next_in() {
 	var next_poks = get_next_in()
 
-	if (damageGen == 3 ) {
-        $("#p2 .ivs, #p2 .iv-label, #p1 .ivs, #p1 .iv-label").hide()
+	if (damageGen < 7 && !TITLE.includes("Lumi") && damageGen != 1) {
+        $("#p1 .evs, #p1 .ev-label").hide()
 
     }
 
