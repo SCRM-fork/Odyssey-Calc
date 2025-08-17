@@ -342,22 +342,22 @@ var RBY = {
     }
 };
 var GSC = (0, util_1.extend)(true, {}, RBY, {
-    '???': { Dark: 1, Steel: 1, Aether: 1 },
-    Normal: { Dark: 1, Steel: 0.5, Aether: 1 },
-    Grass: { Dark: 1, Steel: 0.5, Aether: 1 },
-    Fire: { Dark: 1, Steel: 2, Aether: 1 },
-    Water: { Dark: 1, Steel: 1, Aether: 1 },
-    Electric: { Dark: 1, Steel: 1, Aether: 1 },
-    Ice: { Fire: 0.5, Dark: 1, Steel: 0.5, Aether: 1 },
-    Flying: { Dark: 1, Steel: 0.5, Aether: 1 },
-    Bug: { Poison: 0.5, Dark: 2, Steel: 0.5, Aether: 0.5 },
-    Poison: { Bug: 1, Dark: 1, Steel: 0, Aether: 2 },
-    Ground: { Dark: 1, Steel: 2, Aether: 1 },
-    Rock: { Dark: 1, Steel: 0.5, Aether: 1 },
-    Fighting: { Dark: 2, Steel: 2, Aether: 0.5 },
-    Psychic: { Dark: 0, Steel: 0.5, Aether: 1 },
-    Ghost: { Psychic: 2, Dark: 0.5, Steel: 0.5, Aether: 1 },
-    Dragon: { Dark: 1, Steel: 0.5, Aether: 0 },
+    '???': { Dark: 1, Steel: 1, Fairy: 1 },
+    Normal: { Dark: 1, Steel: 0.5, Fairy: 1 },
+    Grass: { Dark: 1, Steel: 0.5, Fairy: 1 },
+    Fire: { Dark: 1, Steel: 2, Fairy: 1 },
+    Water: { Dark: 1, Steel: 1, Fairy: 1 },
+    Electric: { Dark: 1, Steel: 1, Fairy: 1 },
+    Ice: { Fire: 0.5, Dark: 1, Steel: 0.5, Fairy: 1 },
+    Flying: { Dark: 1, Steel: 0.5, Fairy: 1 },
+    Bug: { Poison: 0.5, Dark: 2, Steel: 0.5, Fairy: 0.5 },
+    Poison: { Bug: 1, Dark: 1, Steel: 0, Fairy: 2 },
+    Ground: { Dark: 1, Steel: 2, Fairy: 1 },
+    Rock: { Dark: 1, Steel: 0.5, Fairy: 1 },
+    Fighting: { Dark: 2, Steel: 2, Fairy: 0.5 },
+    Psychic: { Dark: 0, Steel: 0.5, Fairy: 1 },
+    Ghost: { Psychic: 2, Dark: 0.5, Steel: 0.5, Fairy: 1 },
+    Dragon: { Dark: 1, Steel: 0.5, Fairy: 0 },
     Dark: {
         '???': 1,
         Normal: 1,
@@ -377,7 +377,7 @@ var GSC = (0, util_1.extend)(true, {}, RBY, {
         Dragon: 1,
         Dark: 0.5,
         Steel: 0.5,
-        Aether: 0.5
+        Fairy: 0.5
     },
     Steel: {
         '???': 1,
@@ -398,98 +398,9 @@ var GSC = (0, util_1.extend)(true, {}, RBY, {
         Dragon: 1,
         Dark: 1,
         Steel: 0.5,
-        Aether: 2
+        Fairy: 2
     },
-    Aether: {
-        '???': 1,
-        Normal: 1,
-        Grass: 1,
-        Fire: 1,
-        Water: 1,
-        Electric: 1,
-        Ice: 1,
-        Flying: 1,
-        Bug: 1,
-        Poison: 0.5,
-        Ground: 1,
-        Rock: 1,
-        Fighting: 1,
-        Psychic: 1,
-        Ghost: 1,
-        Dragon: 1,
-        Dark: 0.5,
-        Steel: 1,
-        Aether: 1
-    }
-});
-var ADV = GSC;
-var DPP = GSC;
-var BW = GSC;
-
-
-
-var XY = (0, util_1.extend)(true, {}, GSC, {
-    '???': { Aether: 1 },
-    Normal: { Aether: 1 },
-    Grass: { Aether: 1 },
-    Fire: { Aether: 0.5 },
-    Water: { Aether: 0.5 },
-    Electric: { Aether: 1 },
-    Ice: { Aether: 1 },
-    Flying: { Aether: 0.5 },
-    Bug: { Aether: 1 },
-    Poison: { Aether: 2 },
-    Ground: { Aether: 0.5 },
-    Rock: { Aether: 1 },
-    Fighting: { Aether: 1 },
-    Psychic: { Aether: 1 },
-    Ghost: { Steel: 1, Aether: 1 },
-    Dragon: { Aether: 1 },
-    Dark: { Steel: 1, Aether: 2 },
-    Steel: { Aether: 2 },
-    Aether: {
-        '???': 1,
-        Normal: 1,
-        Grass: 1,
-        Fire: 1,
-        Water: 1,
-        Electric: 1,
-        Ice: 1,
-        Flying: 1,
-        Bug: 1,
-        Poison: 0.5,
-        Ground: 1,
-        Rock: 1,
-        Fighting: 1,
-        Psychic: 1,
-        Ghost: 1,
-        Dragon: 1,
-        Dark: 0.5,
-        Steel: 1,
-        Aether: 0.5
-    }
-});
-
-var platRedux = (0, util_1.extend)(true, {}, GSC, {
-    '???': { Aether: 1 },
-    Normal: { Aether: 1, Dark: 2},
-    Grass: { Aether: 1, Steel: 1},
-    Fire: { Aether: 1 },
-    Water: { Aether: 1 },
-    Electric: { Aether: 1 },
-    Ice: { Aether: 1 },
-    Flying: { Aether: 1 },
-    Bug: { Aether: 0.5, Ghost: 1},
-    Poison: { Aether: 2, Dragon: 2 },
-    Ground: { Aether: 1 },
-    Rock: { Aether: 1 },
-    Fighting: { Aether: 0.5 },
-    Psychic: { Aether: 1, Steel: 1 },
-    Ghost: { Steel: 1, Aether: 1 },
-    Dragon: { Aether: 0, Ice: 0.5, Normal: 2 },
-    Dark: { Steel: 1, Aether: 0.5, Normal: 0.5},
-    Steel: { Aether: 2 },
-    Aether: {
+    Fairy: {
         '???': 1,
         Normal: 1,
         Grass: 1,
@@ -508,30 +419,142 @@ var platRedux = (0, util_1.extend)(true, {}, GSC, {
         Dragon: 2,
         Dark: 2,
         Steel: 0.5,
-        Aether: 1
+        Fairy: 1
+    }
+});
+var ADV = GSC;
+var DPP = GSC;
+var BW = GSC;
+
+
+
+var XY = (0, util_1.extend)(true, {}, GSC, {
+    '???': { Fairy: 1, Aether: 1 },
+    Normal: { Fairy: 1, Aether: 1 },
+    Grass: { Fairy: 1, Aether: 1 },
+    Fire: { Fairy: 1, Aether: 1 },
+    Water: { Fairy: 1, Aether: 1 },
+    Electric: { Fairy: 1, Aether: 1 },
+    Ice: { Fairy: 1, Aether: 1 },
+    Flying: { Fairy: 1, Aether: 1 },
+    Bug: { Fairy: 0.5, Aether: 1 },
+    Poison: { Fairy: 2, Aether: 2 },
+    Ground: { Fairy: 1, Aether: 1 },
+    Rock: { Fairy: 1, Aether: 1 },
+    Fighting: { Fairy: 0.5, Aether: 1 },
+    Psychic: { Fairy: 1, Aether: 1 },
+    Ghost: { Steel: 1, Fairy: 1, Aether: 1 },
+    Dragon: { Fairy: 0, Aether: 1 },
+    Dark: { Steel: 1, Fairy: 0.5, Aether: 2 },
+    Steel: { Fairy: 2, Aether: 1 },
+    Fairy: {
+        '???': 1,
+        Normal: 1,
+        Grass: 1,
+        Fire: 0.5,
+        Water: 1,
+        Electric: 1,
+        Ice: 1,
+        Flying: 1,
+        Bug: 1,
+        Poison: 0.5,
+        Ground: 1,
+        Rock: 1,
+        Fighting: 2,
+        Psychic: 1,
+        Ghost: 1,
+        Dragon: 2,
+        Dark: 2,
+        Steel: 0.5,
+        Fairy: 1,
+		Aether: 1
+    }
+	    Aether: {
+        '???': 1,
+        Normal: 1,
+        Grass: 1,
+        Fire: 1,
+        Water: 1,
+        Electric: 1,
+        Ice: 1,
+        Flying: 1,
+        Bug: 1,
+        Poison: 0.5,
+        Ground: 1,
+        Rock: 1,
+        Fighting: 1,
+        Psychic: 1,
+        Ghost: 1,
+        Dragon: 1,
+        Dark: 0.5,
+        Steel: 1,
+        Fairy: 1,
+		Aether: 0.5
+    }
+});
+
+var platRedux = (0, util_1.extend)(true, {}, GSC, {
+    '???': { Fairy: 1 },
+    Normal: { Fairy: 1, Dark: 2},
+    Grass: { Fairy: 1, Steel: 1},
+    Fire: { Fairy: 1 },
+    Water: { Fairy: 1 },
+    Electric: { Fairy: 1 },
+    Ice: { Fairy: 1 },
+    Flying: { Fairy: 1 },
+    Bug: { Fairy: 0.5, Ghost: 1},
+    Poison: { Fairy: 2, Dragon: 2 },
+    Ground: { Fairy: 1 },
+    Rock: { Fairy: 1 },
+    Fighting: { Fairy: 0.5 },
+    Psychic: { Fairy: 1, Steel: 1 },
+    Ghost: { Steel: 1, Fairy: 1 },
+    Dragon: { Fairy: 0, Ice: 0.5, Normal: 2 },
+    Dark: { Steel: 1, Fairy: 0.5, Normal: 0.5},
+    Steel: { Fairy: 2 },
+    Fairy: {
+        '???': 1,
+        Normal: 1,
+        Grass: 1,
+        Fire: 0.5,
+        Water: 1,
+        Electric: 1,
+        Ice: 1,
+        Flying: 1,
+        Bug: 1,
+        Poison: 0.5,
+        Ground: 1,
+        Rock: 1,
+        Fighting: 2,
+        Psychic: 1,
+        Ghost: 1,
+        Dragon: 2,
+        Dark: 2,
+        Steel: 0.5,
+        Fairy: 1
     }
 });
 
 var parallelEm = (0, util_1.extend)(true, {}, GSC, {
-    '???': { Aether: 1 },
-    Normal: { Aether: 1, Dark: 2},
-    Grass: { Aether: 1, Steel: 1},
-    Fire: { Aether: 1 },
-    Water: { Aether: 1, Ice: 0.5 },
-    Electric: { Aether: 1 },
-    Ice: { Aether: 1 },
-    Flying: { Aether: 1 },
-    Bug: { Aether: 1, Ghost: 1},
-    Poison: { Aether: 2, Dragon: 2, Ghost: 1 },
-    Ground: { Aether: 1 },
-    Rock: { Aether: 1 },
-    Fighting: { Aether: 0.5 },
-    Psychic: { Aether: 1, Steel: 1 },
-    Ghost: { Steel: 1, Aether: 1 },
-    Dragon: { Aether: 0, Ice: 0.5, Normal: 2 },
-    Dark: { Steel: 1, Aether: 0.5, Normal: 0.5},
-    Steel: { Aether: 2 },
-    Aether: {
+    '???': { Fairy: 1 },
+    Normal: { Fairy: 1, Dark: 2},
+    Grass: { Fairy: 1, Steel: 1},
+    Fire: { Fairy: 1 },
+    Water: { Fairy: 1, Ice: 0.5 },
+    Electric: { Fairy: 1 },
+    Ice: { Fairy: 1 },
+    Flying: { Fairy: 1 },
+    Bug: { Fairy: 1, Ghost: 1},
+    Poison: { Fairy: 2, Dragon: 2, Ghost: 1 },
+    Ground: { Fairy: 1 },
+    Rock: { Fairy: 1 },
+    Fighting: { Fairy: 0.5 },
+    Psychic: { Fairy: 1, Steel: 1 },
+    Ghost: { Steel: 1, Fairy: 1 },
+    Dragon: { Fairy: 0, Ice: 0.5, Normal: 2 },
+    Dark: { Steel: 1, Fairy: 0.5, Normal: 0.5},
+    Steel: { Fairy: 2 },
+    Fairy: {
         '???': 1,
         Normal: 1,
         Grass: 1,
@@ -550,7 +573,7 @@ var parallelEm = (0, util_1.extend)(true, {}, GSC, {
         Dragon: 2,
         Dark: 2,
         Steel: 0.5,
-        Aether: 1
+        Fairy: 1
     }
 });
 
@@ -667,7 +690,7 @@ finally {
 // function construct_type_chart() {
 //     var type_names = ["Normal", "Fire", "Water", "Electric", "Grass", "Ice",
 //              "Fighting", "Poison", "Ground", "Flying", "Psychic",
-//              "Bug", "Rock", "Ghost", "Dragon", "Dark", "Steel", "Aether","???"]
+//              "Bug", "Rock", "Ghost", "Dragon", "Dark", "Steel", "Fairy","???"]
 
 //     var types = TYPES_BY_ID[type_chart]
 //     var chart = []
