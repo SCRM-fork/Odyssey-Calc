@@ -68,7 +68,8 @@ var RBY = {
         Fighting: 1,
         Psychic: 1,
         Ghost: 1,
-        Dragon: 1
+        Dragon: 1,
+		Aether: 1
     },
     Normal: {
         '???': 1,
@@ -86,7 +87,8 @@ var RBY = {
         Fighting: 1,
         Psychic: 1,
         Ghost: 0,
-        Dragon: 1
+        Dragon: 1,
+		Aether: 1
     },
     Grass: {
         '???': 1,
@@ -104,7 +106,8 @@ var RBY = {
         Fighting: 1,
         Psychic: 1,
         Ghost: 1,
-        Dragon: 0.5
+        Dragon: 0.5,
+		Aether: 1
     },
     Fire: {
         '???': 1,
@@ -122,7 +125,8 @@ var RBY = {
         Fighting: 1,
         Psychic: 1,
         Ghost: 1,
-        Dragon: 0.5
+        Dragon: 0.5,
+		Aether: 0.5
     },
     Water: {
         '???': 1,
@@ -140,7 +144,8 @@ var RBY = {
         Fighting: 1,
         Psychic: 1,
         Ghost: 1,
-        Dragon: 0.5
+        Dragon: 0.5,
+		Aether: 0.5
     },
     Electric: {
         '???': 1,
@@ -158,7 +163,8 @@ var RBY = {
         Fighting: 1,
         Psychic: 1,
         Ghost: 1,
-        Dragon: 0.5
+        Dragon: 0.5,
+		Aether: 1
     },
     Ice: {
         '???': 1,
@@ -176,7 +182,8 @@ var RBY = {
         Fighting: 1,
         Psychic: 1,
         Ghost: 1,
-        Dragon: 2
+        Dragon: 2,
+		Aether: 1
     },
     Flying: {
         '???': 1,
@@ -194,7 +201,8 @@ var RBY = {
         Fighting: 2,
         Psychic: 1,
         Ghost: 1,
-        Dragon: 1
+        Dragon: 1,
+		Aether: 0.5
     },
     Bug: {
         '???': 1,
@@ -212,7 +220,8 @@ var RBY = {
         Fighting: 0.5,
         Psychic: 2,
         Ghost: 0.5,
-        Dragon: 1
+        Dragon: 1,
+		Aether: 1
     },
     Poison: {
         '???': 1,
@@ -230,7 +239,8 @@ var RBY = {
         Fighting: 1,
         Psychic: 1,
         Ghost: 0.5,
-        Dragon: 1
+        Dragon: 1,
+		Aether: 2
     },
     Ground: {
         '???': 1,
@@ -248,7 +258,8 @@ var RBY = {
         Fighting: 1,
         Psychic: 1,
         Ghost: 1,
-        Dragon: 1
+        Dragon: 1,
+		Aether: 0.5
     },
     Rock: {
         '???': 1,
@@ -266,7 +277,8 @@ var RBY = {
         Fighting: 0.5,
         Psychic: 1,
         Ghost: 1,
-        Dragon: 1
+        Dragon: 1,
+		Aether: 1
     },
     Fighting: {
         '???': 1,
@@ -284,7 +296,8 @@ var RBY = {
         Fighting: 1,
         Psychic: 0.5,
         Ghost: 0,
-        Dragon: 1
+        Dragon: 1,
+		Aether: 1
     },
     Psychic: {
         '???': 1,
@@ -302,7 +315,8 @@ var RBY = {
         Fighting: 2,
         Psychic: 0.5,
         Ghost: 1,
-        Dragon: 1
+        Dragon: 1,
+		Aether: 1
     },
     Ghost: {
         '???': 1,
@@ -320,7 +334,8 @@ var RBY = {
         Fighting: 1,
         Psychic: 0,
         Ghost: 2,
-        Dragon: 1
+        Dragon: 1,
+		Aether: 1
     },
     Dragon: {
         '???': 1,
@@ -338,7 +353,27 @@ var RBY = {
         Fighting: 1,
         Psychic: 1,
         Ghost: 1,
-        Dragon: 2
+        Dragon: 2,
+		Aether: 1
+    },
+	    Aether: {
+        '???': 1,
+        Normal: 1,
+        Grass: 1,
+        Fire: 1,
+        Water: 1,
+        Electric: 1,
+        Ice: 1,
+        Flying: 1,
+        Bug: 1,
+        Poison: 0.5,
+        Ground: 1,
+        Rock: 1,
+        Fighting: 1,
+        Psychic: 1,
+        Ghost: 1,
+        Dragon: 1,
+		Aether: 0.5
     }
 };
 var GSC = (0, util_1.extend)(true, {}, RBY, {
@@ -358,6 +393,7 @@ var GSC = (0, util_1.extend)(true, {}, RBY, {
     Psychic: { Dark: 0, Steel: 0.5, Fairy: 1 },
     Ghost: { Psychic: 2, Dark: 0.5, Steel: 0.5, Fairy: 1 },
     Dragon: { Dark: 1, Steel: 0.5, Fairy: 0 },
+	Aether: { Dark: 0.5, Steel: 1, Fairy: 1 },
     Dark: {
         '???': 1,
         Normal: 1,
@@ -377,7 +413,8 @@ var GSC = (0, util_1.extend)(true, {}, RBY, {
         Dragon: 1,
         Dark: 0.5,
         Steel: 0.5,
-        Fairy: 0.5
+        Fairy: 0.5,
+		Aether: 2
     },
     Steel: {
         '???': 1,
@@ -398,7 +435,8 @@ var GSC = (0, util_1.extend)(true, {}, RBY, {
         Dragon: 1,
         Dark: 1,
         Steel: 0.5,
-        Fairy: 2
+        Fairy: 2,
+		Aether: 1
     },
     Fairy: {
         '???': 1,
@@ -419,7 +457,8 @@ var GSC = (0, util_1.extend)(true, {}, RBY, {
         Dragon: 2,
         Dark: 2,
         Steel: 0.5,
-        Fairy: 1
+        Fairy: 1,
+		Aether: 1
     }
 });
 var ADV = GSC;
@@ -447,6 +486,7 @@ var XY = (0, util_1.extend)(true, {}, GSC, {
     Dragon: { Fairy: 0 },
     Dark: { Steel: 1, Fairy: 0.5 },
     Steel: { Fairy: 2 },
+	Aether: { Fairy: 1 },
     Fairy: {
         '???': 1,
         Normal: 1,
@@ -466,7 +506,8 @@ var XY = (0, util_1.extend)(true, {}, GSC, {
         Dragon: 2,
         Dark: 2,
         Steel: 0.5,
-        Fairy: 1
+        Fairy: 1,
+		Aether: 1
     }
 });
 
