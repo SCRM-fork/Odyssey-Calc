@@ -517,7 +517,7 @@ function refresh_next_in() {
 	var next_poks = get_next_in()
 
 	if (damageGen < 7 && !TITLE.includes("Lumi") && damageGen != 1) {
-        $("#p1 .evs, #p1 .ev-label").hide()
+        $("#p1 .ivs, #p1 .iv-label").hide()
 
     }
 
