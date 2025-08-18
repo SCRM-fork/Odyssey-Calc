@@ -221,55 +221,8 @@ var RBY = {
         category: 'Special'
     },
     'Water Gun': { bp: 40, type: 'Water' },
-    Withdraw: { bp: 0, category: 'Status', type: 'Water' },
-    'Toxic Reap': {
-        bp: 75,
-        type: 'Poison',
-        makesContact: true, 
-        category: 'Physical'
-    },
-    'Volt Wings': {
-        bp: 75,
-        type: 'Electric',
-        makesContact: true, 
-        category: 'Physical'
-    },
-    'Whip Ripper': {
-        bp: 80,
-        type: 'Ground',
-        makesContact: true, 
-        category: 'Physical'
-    },
-    'Ladybug Rush': {
-        bp: 80,
-        type: 'Bug',
-        makesContact: true,
-        category: 'Physical'
-    },
-    Izuna: {
-        bp: 50,
-        type: 'Poison',
-        makesContact: true,
-        category: 'Physical'
-    },
-    Fukubari: {
-        bp: 65,
-        type: 'Poison',
-        makesContact: true,
-        category: 'Physical'
-    },
-    'Tagen Battou': {
-        bp: 100,
-        type: 'Poison',
-        makesContact: true,
-        category: 'Physical'
-    },
-    ChainWeather: {
-        bp: 70,
-        type: 'Normal',
-        makesContact: true,
-        category: 'Physical'
-    }
+    Withdraw: { bp: 0, category: 'Status', type: 'Water' }
+
 };
 var GSC_PATCH = {
     Bide: { type: 'Normal' },
