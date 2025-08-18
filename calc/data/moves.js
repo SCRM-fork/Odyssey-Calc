@@ -240,13 +240,6 @@ var RBY = {
         makesContact: true, 
         category: 'Physical'
     },
-    Doublehammer: {
-        bp: 80,
-        type: 'Steel',
-        makesContact: true,
-        multihit: 2,
-        category: 'Physical'
-    },
     'Ladybug Rush': {
         bp: 80,
         type: 'Bug',
@@ -269,12 +262,6 @@ var RBY = {
         bp: 100,
         type: 'Poison',
         makesContact: true,
-        category: 'Physical'
-    },
-    SporeBarrage: {
-        bp: 25,
-        type: 'Poison',
-        multihit: [2, 5],
         category: 'Physical'
     },
     ChainWeather: {
