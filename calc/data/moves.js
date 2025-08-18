@@ -244,7 +244,25 @@ var RBY = {
         bp: 80,
         type: 'Steel',
         makesContact: true,
-        multihit: 2,
+        multihit: 2 ,
+        category: 'Physical'
+    },
+    'Ladybug Rush': {
+        bp: 80,
+        type: 'Bug',
+        makesContact: true,
+        category: 'Physical'
+    },
+    Izuna: {
+        bp: 50,
+        type: 'Poison',
+        makesContact: true,
+        category: 'Physical'
+    },
+    Fukubari: {
+        bp: 65,
+        type: 'Poison',
+        makesContact: true,
         category: 'Physical'
     }
 };
