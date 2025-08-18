@@ -221,8 +221,32 @@ var RBY = {
         category: 'Special'
     },
     'Water Gun': { bp: 40, type: 'Water' },
-    Withdraw: { bp: 0, category: 'Status', type: 'Water' }
-
+    Withdraw: { bp: 0, category: 'Status', type: 'Water' },
+    'Toxic Reap': {
+        bp: 75,
+        type: 'Poison',
+        makesContact: true, 
+        category: 'Physical'
+    },
+    'Volt Wings': {
+        bp: 75,
+        type: 'Electric',
+        makesContact: true, 
+        category: 'Physical'
+    },
+    'Whip Ripper': {
+        bp: 80,
+        type: 'Ground',
+        makesContact: true, 
+        category: 'Physical'
+    },
+    Doublehammer: {
+        bp: 80,
+        type: 'Steel',
+        makesContact: true,
+        multihit: 2,
+        category: 'Physical'
+    }
 };
 var GSC_PATCH = {
     Bide: { type: 'Normal' },
