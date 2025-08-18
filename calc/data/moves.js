@@ -215,8 +215,19 @@ var RBY = {
     'Thunder Punch': { bp: 75, type: 'Electric' },
     'Thunder Shock': { bp: 40, type: 'Electric' },
     'Vise Grip': { bp: 55, type: 'Normal' },
+    'Water Bomb': {
+        bp: 70,
+        type: 'Water',
+        category: 'Special'
+    },
     'Water Gun': { bp: 40, type: 'Water' },
-    Withdraw: { bp: 0, category: 'Status', type: 'Water' }
+    Withdraw: { bp: 0, category: 'Status', type: 'Water' },
+    'Toxic Reap': {
+        bp: 75,
+        type: 'Poison',
+        makesContact: true, 
+        category: 'Physical'
+    }
 };
 var GSC_PATCH = {
     Bide: { type: 'Normal' },
