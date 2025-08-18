@@ -72,6 +72,11 @@ var RBY = {
     'Dragon Rage': { bp: 1, type: 'Dragon' },
     'Dream Eater': { bp: 100, type: 'Psychic', drain: [1, 2] },
     Earthquake: { bp: 100, type: 'Ground' },
+    Electroshock: {
+        bp: 75,
+        type: 'Electric',
+        category: 'Special'
+    },
     Explosion: { bp: 170, type: 'Normal' },
     'Fire Blast': { bp: 120, type: 'Fire' },
     'Fire Spin': { bp: 15, type: 'Fire' },
@@ -85,6 +90,7 @@ var RBY = {
     Guillotine: { bp: 0, type: 'Normal' },
     Gust: { bp: 40, type: 'Normal' },
     Haze: { bp: 0, category: 'Status', type: 'Ice' },
+    'Heal': { bp: 0, category: 'Status', type: 'Normal' },
     'High Jump Kick': { bp: 85, type: 'Fighting', hasCrashDamage: true },
     'Horn Drill': { bp: 0, type: 'Normal' },
     'Hyper Beam': { bp: 150, type: 'Normal' },
