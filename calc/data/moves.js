@@ -56,6 +56,7 @@ var RBY = {
     Bonemerang: { bp: 50, type: 'Ground', multihit: 2 },
     Bubble: { bp: 20, type: 'Water' },
     'Bubble Beam': { bp: 65, type: 'Water' },
+    'Chain Weather': { bp: 70, category: 'Physical', type: 'Normal' },
     Clamp: { bp: 35, type: 'Water' },
     'Comet Punch': { bp: 18, type: 'Normal', multihit: [2, 5] },
     Constrict: { bp: 10, type: 'Normal' },
@@ -221,8 +222,7 @@ var RBY = {
         category: 'Special'
     },
     'Water Gun': { bp: 40, type: 'Water' },
-    Withdraw: { bp: 0, category: 'Status', type: 'Water' },
-    'Chain Weather': { bp: 70, category: 'Physical', type: 'Normal' }
+    Withdraw: { bp: 0, category: 'Status', type: 'Water' }
 };
 var GSC_PATCH = {
     Bide: { type: 'Normal' },
