@@ -2093,7 +2093,21 @@ function removeEvs(sets) {
     }
 }
 
+function setIvs(sets) {
+    for (const species_name in sets) {
+        const setdata = sets[species_name];    
+        for (const set_name in setdata) {
+            const secondLevelValue = setdata[set_name];
+            if (Object.prototype.hasOwnProperty.call(secondLevelValue, 'ivs')) {
+                secondLevelValue.ivs = 31;
+            }
+        }
+    }
+}
+
 function loadDataSource(data) {
+    
+    setIvs(data["formatted_sets"]) //SET IVs to 31
     
     if (evsOn == '0') {
         removeEvs(data["formatted_sets"])
