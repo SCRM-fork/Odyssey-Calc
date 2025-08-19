@@ -222,8 +222,8 @@ var RBY = {
     },
     'Chainweather': {
         bp: 70,
-        type: 'Water',
-        category: 'Special'
+        type: 'Normal',
+        category: 'Physical'
     },
     'Water Gun': { bp: 40, type: 'Water' },
     Withdraw: { bp: 0, category: 'Status', type: 'Water' }
@@ -530,7 +530,7 @@ var ADV_PATCH = {
     Trick: { bp: 0, category: 'Status', type: 'Psychic' },
     Uproar: { bp: 50, type: 'Normal', isSound: true },
     'Volt Tackle': { bp: 120, type: 'Electric', recoil: [1, 3], makesContact: true },
-    'Weather Ball': { bp: 50, type: 'Normal' },
+    'Weather Ball': { bp: 50, type: 'Normal', category: 'Special' },
     Aromatherapy: { bp: 0, category: 'Status', type: 'Grass' },
     'Brick Break': { bp: 75, type: 'Fighting', makesContact: true },
     Endeavor: { bp: 0, type: 'Normal', makesContact: true },
