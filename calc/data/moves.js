@@ -327,22 +327,22 @@ var RBY = {
         target: 'allAdjacentFoes',
         recoil: [1, 3]
 	},
-    'Call: Snake': {
+    'Call Snake': {
 		bp: 50,
 		type: 'Poison',
 		category: 'Physical'
 	},
-    'Call: Owl': {
+    'Call Owl': {
 		bp: 60,
 		type: 'Flying',
 		category: 'Physical'
 	},
-    'Call: Lion': {
+    'Call Lion': {
 		bp: 80,
 		type: 'Fire',
 		category: 'Physical'
 	},
-    'Call: Allies': {
+    'Call Allies': {
 		bp: 50,
 		type: 'Aether',
 		category: 'Physical'
