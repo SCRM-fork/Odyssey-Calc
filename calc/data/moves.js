@@ -319,6 +319,34 @@ var RBY = {
 		category: 'Physical',
 		makesContact: true
 	},
+    'Darknessfist': {
+		bp: 100,
+		type: 'Dark',
+		category: 'Physical',
+		makesContact: true,
+        target: 'allAdjacentFoes',
+        recoil: [1, 3]
+	},
+    'Call: Snake': {
+		bp: 50,
+		type: 'Poison',
+		category: 'Physical'
+	},
+    'Call: Owl': {
+		bp: 60,
+		type: 'Flying',
+		category: 'Physical'
+	},
+    'Call: Lion': {
+		bp: 80,
+		type: 'Fire',
+		category: 'Physical'
+	},
+    'Call: Allies': {
+		bp: 50,
+		type: 'Aether',
+		category: 'Physical'
+	},
     'Water Gun': { bp: 40, type: 'Water' },
     Withdraw: { bp: 0, category: 'Status', type: 'Water' }
 };
