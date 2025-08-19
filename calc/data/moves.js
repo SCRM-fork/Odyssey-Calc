@@ -252,18 +252,6 @@ var RBY = {
         type: 'Bug',
         makesContact: true,
         category: 'Physical'
-    },
-    Izuna: {
-        bp: 50,
-        type: 'Poison',
-        makesContact: true,
-        category: 'Physical'
-    },
-    Fukubari: {
-        bp: 65,
-        type: 'Poison',
-        makesContact: true,
-        category: 'Physical'
     }
 };
 var GSC_PATCH = {
