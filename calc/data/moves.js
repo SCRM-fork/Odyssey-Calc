@@ -221,13 +221,7 @@ var RBY = {
         category: 'Special'
     },
     'Water Gun': { bp: 40, type: 'Water' },
-    Withdraw: { bp: 0, category: 'Status', type: 'Water' },
-    'Toxic Reap': {
-        bp: 75,
-        type: 'Poison',
-        makesContact: true, 
-        category: 'Physical'
-    }
+    Withdraw: { bp: 0, category: 'Status', type: 'Water' }
 };
 var GSC_PATCH = {
     Bide: { type: 'Normal' },
