@@ -2129,16 +2129,12 @@ function loadDataSource(data) {
     SETDEX_XY = data["formatted_sets"]
     setdex = data["formatted_sets"]
 
-    if (data["title"]) {
-        TITLE = data["title"]
-        pokChanges = {}
-        console.log(`Custom Title ${TITLE}`)
-        $('.genSelection').hide()
-        $('#rom-title').text(TITLE).show()
-        if (data["move_replacements"]) {
-            moveChanges[TITLE] = data["move_replacements"]
-        }
-    }
+
+    TITLE = 'Pokémon Odyssey Damage Calculator'
+    pokChanges = {}
+    console.log(`Custom Title ${TITLE}`)
+    $('.genSelection').hide()
+    $('#rom-title').text(TITLE).show()
 
     if (TITLE.includes("White") || TITLE.includes("Black") ) {
         baseGame = "BW"
