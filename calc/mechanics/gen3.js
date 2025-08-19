@@ -81,18 +81,6 @@ function calculateADV(gen, attacker, defender, move, field) {
         desc.moveType = move.type;
         desc.moveBP = move.bp;
     }
-    if (move.named('ChainWeather')) {
-        move.type =
-            field.hasWeather('Sun') ? 'Fire'
-                : field.hasWeather('Rain') ? 'Water'
-                    : field.hasWeather('Sand') ? 'Rock'
-                        : field.hasWeather('Hail') ? 'Ice'
-                            : 'Normal';
-        move.category = ['Fire', 'Water', 'Ice'].includes(move.type) ? 'Special' : 'Physical'
-        desc.weather = field.weather;
-        desc.moveType = move.type;
-        desc.moveBP = move.bp;
-    }
     var type1Effectiveness = (0, util_1.getMoveEffectiveness)(gen, move, defender.types[0], field.defenderSide.isForesight);
     var type2Effectiveness = defender.types[1]
         ? (0, util_1.getMoveEffectiveness)(gen, move, defender.types[1], field.defenderSide.isForesight)
@@ -305,10 +293,6 @@ function calculateADV(gen, attacker, defender, move, field) {
         desc.isCritical = true;
     }
     if (move.named('Weather Ball') && field.weather) {
-        baseDamage *= 2;
-        desc.moveBP = bp * 2;
-    }
-    if (move.named('ChainWeather') && field.weather) {
         baseDamage *= 2;
         desc.moveBP = bp * 2;
     }
