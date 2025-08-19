@@ -153,6 +153,10 @@ function calculateADV(gen, attacker, defender, move, field) {
                 desc.moveBP = bp;
             }
             break;
+        case 'Titan Killer':
+            bp = Math.floor((defender.curHP() * 150) / defender.maxHP());
+            desc.moveBP = bp;
+            break;
         case 'Nature Power':
             move.category = 'Physical';
             bp = 60;

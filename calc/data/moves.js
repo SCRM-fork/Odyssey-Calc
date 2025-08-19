@@ -313,6 +313,12 @@ var RBY = {
 		category: 'Physical',
 		makesContact: true
 	},
+    'Titan Killer': {
+		bp: 0,
+		type: 'Fighting',
+		category: 'Physical',
+		makesContact: true
+	},
     'Water Gun': { bp: 40, type: 'Water' },
     Withdraw: { bp: 0, category: 'Status', type: 'Water' }
 };
