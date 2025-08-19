@@ -223,6 +223,75 @@ var RBY = {
     'Chainweather': {
         bp: 70,
         type: 'Normal',
+        makesContact: true,
+        category: 'Physical'
+    },
+    'Toxic Reap': {
+        bp: 75,
+        type: 'Poison',
+        makesContact: true, 
+        category: 'Physical'
+    },
+    'Volt Wings': {
+        bp: 75,
+        type: 'Electric',
+        makesContact: true, 
+        category: 'Physical'
+    },
+    'Whip Ripper': {
+        bp: 80,
+        type: 'Ground',
+        makesContact: true, 
+        category: 'Physical'
+    },
+    Doublehammer: {
+        bp: 80,
+        type: 'Steel',
+        makesContact: true,
+        multihit: 2,
+        category: 'Physical'
+    },
+    'Stomp Crush': {
+        bp: 90,
+        type: 'Rock',
+        makesContact: true,
+        target: 'allAdjacentFoes',
+        category: 'Physical'
+    },
+    'Ladybug Rush': {
+        bp: 80,
+        type: 'Bug',
+        makesContact: true,
+        category: 'Physical'
+    },
+    Izuna: {
+        bp: 50,
+        type: 'Poison',
+        makesContact: true,
+        category: 'Physical'
+    },
+    Fukubari: {
+        bp: 65,
+        type: 'Poison',
+        makesContact: true,
+        category: 'Physical'
+    },
+    'Tagen Battou': {
+        bp: 100,
+        type: 'Poison',
+        makesContact: true,
+        category: 'Physical'
+    },
+    Sporebarrage: {
+        bp: 25,
+        type: 'Poison',
+        multihit: [2, 5],
+        category: 'Physical'
+    },
+    "Chain Killer": {
+        bp: 60,
+        type: 'Flying',
+        makesContact: true,
         category: 'Physical'
     },
     'Water Gun': { bp: 40, type: 'Water' },
