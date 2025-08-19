@@ -147,6 +147,12 @@ function calculateADV(gen, attacker, defender, move, field) {
                 desc.moveBP = bp;
             }
             break;
+        case 'Leading Blow':
+            if (defender.hasStatus('par', 'psn', 'tox', 'brn', 'slp')) {
+                bp = move.bp * 2;
+                desc.moveBP = bp;
+            }
+            break;
         case 'Nature Power':
             move.category = 'Physical';
             bp = 60;

@@ -294,6 +294,25 @@ var RBY = {
         makesContact: true,
         category: 'Physical'
     },
+    'Corkscrew': {
+		bp: 60,
+		type: 'Fighting',
+		category: 'Physical',
+		makesContact: true
+	},
+    'One-Twopunch': {
+		bp: 40,
+		type: 'Fighting',
+		category: 'Physical',
+		makesContact: true,
+        multihit: 2,
+	},
+    'Leading Blow': {
+		bp: 70,
+		type: 'Fighting',
+		category: 'Physical',
+		makesContact: true
+	},
     'Water Gun': { bp: 40, type: 'Water' },
     Withdraw: { bp: 0, category: 'Status', type: 'Water' }
 };
