@@ -607,7 +607,8 @@ $(".set-selector").change(function () {
 	var fullSetName = $(this).val();
 	var pokemonName = fullSetName.substring(0, fullSetName.indexOf(" ("));
 	var setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
-
+	$('#doubles-format').click()
+	
 	if ($(this).hasClass('opposing')) {
 		CURRENT_TRAINER_POKS = get_trainer_poks(fullSetName)
 		var sprite = SETDEX_BW
@@ -657,17 +658,17 @@ $(".set-selector").change(function () {
 					}
 				}
 
-				if ((battle_type == "Singles" || battle_type == undefined || battle_type == "Rotation") && !partner_name) {
-					$('#singles-format').click()
-				} else {
-					$('#doubles-format').click()
-				}
+				// if ((battle_type == "Singles" || battle_type == undefined || battle_type == "Rotation") && !partner_name) {
+				// 	$('#singles-format').click()
+				// } else {
+				// 	$('#doubles-format').click()
+				// }
 
 
 
-				if (misc == "Orre") {
-					$('#doubles-format').click()
-				}
+				// if (misc == "Orre") {
+				// 	$('#doubles-format').click()
+				// }
 				// $('#trainer-sprite').attr('src', `./img/${sprite}`)
 				// $('#trainer-sprite').show()
 
