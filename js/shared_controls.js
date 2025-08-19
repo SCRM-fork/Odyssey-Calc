@@ -608,7 +608,7 @@ $(".set-selector").change(function () {
 	var pokemonName = fullSetName.substring(0, fullSetName.indexOf(" ("));
 	var setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
 	$('#doubles-format').click()
-	
+
 	if ($(this).hasClass('opposing')) {
 		CURRENT_TRAINER_POKS = get_trainer_poks(fullSetName)
 		var sprite = SETDEX_BW
@@ -1840,7 +1840,7 @@ $(document).ready(function () {
 	if (damageGen <= 5 && switchIn < 10 && TITLE != "Platinum Redux 2.6" || TITLE.includes("Lumi")) {
 		trainerSprites = "front"
 		playerSprites = "back"
-		suffix = "gif"
+		suffix = "png"
 	} else {
 		trainerSprites = "newhd"
 		playerSprites = "newhd"
