@@ -221,7 +221,13 @@ var RBY = {
         category: 'Special'
     },
     'Water Gun': { bp: 40, type: 'Water' },
-    Withdraw: { bp: 0, category: 'Status', type: 'Water' }
+    Withdraw: { bp: 0, category: 'Status', type: 'Water' },
+    ChainWeather: {
+        bp: 70,
+        type: 'Normal',
+        makesContact: true,
+        category: 'Physical'
+    }
 };
 var GSC_PATCH = {
     Bide: { type: 'Normal' },
