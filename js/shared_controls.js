@@ -516,10 +516,9 @@ function smogonAnalysis(pokemonName) {
 function refresh_next_in() {
 	var next_poks = get_next_in()
 
-	if (damageGen < 7 && !TITLE.includes("Lumi") && damageGen != 1) {
-    //    $("#p1 .evs, #p1 .ev-label").hide()
-
-    }
+	// $("#p2 .evs, #p2 .ev-label").hide()
+	// $("#p1 .evs, #p1 .ev-label").hide()
+	$("#p1 .ivs, #p2 .ivs").hide()
 
     if (damageGen == 1) {
     	$('.evs.calc-trigger').attr('max', '65535').addClass('expanded')
