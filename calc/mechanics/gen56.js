@@ -131,12 +131,12 @@ function calculateBWXY(gen, attacker, defender, move, field) {
             type2Effectiveness = 0.5;
     }
     var typeEffectiveness = type1Effectiveness * type2Effectiveness;
-    var resistedKnockOffDamage = !defender.item ||
-        (defender.named('Giratina-Origin') && defender.hasItem('Griseous Orb')) ||
-        (defender.name.includes('Arceus') && defender.item.includes('Plate')) ||
-        (defender.name.includes('Genesect') && defender.item.includes('Drive')) ||
-        (defender.named('Groudon', 'Groudon-Primal') && defender.hasItem('Red Orb')) ||
-        (defender.named('Kyogre', 'Kyogre-Primal') && defender.hasItem('Blue Orb'));
+    // var resistedKnockOffDamage = !defender.item ||
+    //     (defender.named('Giratina-Origin') && defender.hasItem('Griseous Orb')) ||
+    //     (defender.name.includes('Arceus') && defender.item.includes('Plate')) ||
+    //     (defender.name.includes('Genesect') && defender.item.includes('Drive')) ||
+    //     (defender.named('Groudon', 'Groudon-Primal') && defender.hasItem('Red Orb')) ||
+    //     (defender.named('Kyogre', 'Kyogre-Primal') && defender.hasItem('Blue Orb'));
     if (!resistedKnockOffDamage && defender.item) {
         var item = gen.items.get((0, util_1.toID)(defender.item));
         resistedKnockOffDamage = false;

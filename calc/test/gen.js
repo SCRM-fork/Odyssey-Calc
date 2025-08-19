@@ -395,22 +395,22 @@ var Specie = (function () {
                 this.baseSpecies = 'Aegislash-Blade';
             }
         }
-        else if (species.id === 'toxtricity') {
-            this.otherFormes = [
-                'Toxtricity-Gmax', 'Toxtricity-Low-Key', 'Toxtricity-Low-Key-Gmax',
-            ];
-        }
-        else if (species.id === 'toxtricitylowkey') {
-            this.baseSpecies = 'Toxtricity';
-        }
-        else if (species.id === 'urshifu') {
-            this.otherFormes = [
-                'Urshifu-Gmax', 'Urshifu-Rapid-Strike', 'Urshifu-Rapid-Strike-Gmax',
-            ];
-        }
-        else if (species.id === 'eternatus') {
-            this.otherFormes = ['Eternatus-Eternamax'];
-        }
+        // else if (species.id === 'toxtricity') {
+        //     this.otherFormes = [
+        //         'Toxtricity-Gmax', 'Toxtricity-Low-Key', 'Toxtricity-Low-Key-Gmax',
+        //     ];
+        // }
+        // else if (species.id === 'toxtricitylowkey') {
+        //     this.baseSpecies = 'Toxtricity';
+        // }
+        // else if (species.id === 'urshifu') {
+        //     this.otherFormes = [
+        //         'Urshifu-Gmax', 'Urshifu-Rapid-Strike', 'Urshifu-Rapid-Strike-Gmax',
+        //     ];
+        // }
+        // else if (species.id === 'eternatus') {
+        //     this.otherFormes = ['Eternatus-Eternamax'];
+        // }
         else if (formes === null || formes === void 0 ? void 0 : formes.length) {
             this.otherFormes = __spreadArray([], __read(formes), false).sort();
         }
