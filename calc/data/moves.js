@@ -227,18 +227,6 @@ var RBY = {
         type: 'Poison',
         makesContact: true, 
         category: 'Physical'
-    },
-    'Volt Wings': {
-        bp: 75,
-        type: 'Electric',
-        makesContact: true, 
-        category: 'Physical'
-    },
-    'Whip Ripper': {
-        bp: 80,
-        type: 'Ground',
-        makesContact: true, 
-        category: 'Physical'
     }
 };
 var GSC_PATCH = {
