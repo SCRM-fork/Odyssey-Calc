@@ -350,7 +350,7 @@ option {
     background: #f1f1f1;
 }
 .boost,.totalMod {
-    margin-left: 4px;
+    margin-left: 0px;
 }
 
 input {
@@ -1358,6 +1358,9 @@ select.toxic-counter {
 }
 .move-type.calc-trigger {
     width: 6em;
+}
+.boost.calc-trigger {
+    margin-left: 10px;
 }
 .move-cat {
     width: 6em;
