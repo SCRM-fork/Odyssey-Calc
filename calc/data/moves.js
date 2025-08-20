@@ -607,6 +607,18 @@ var RBY = {
 		category: 'Special',
 		makesContact: true
 	},
+	'Demon Rage': {
+		bp: 100,
+		type: 'Ghost',
+		category: 'Physical',
+		makesContact: true
+	},
+	'Rising Claw': {
+		bp: 100,
+		type: 'Steel',
+		category: 'Physical',
+		makesContact: true
+	},
     'Water Gun': { bp: 40, type: 'Water' },
     Withdraw: { bp: 0, category: 'Status', type: 'Water' }
 };

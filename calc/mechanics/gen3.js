@@ -96,6 +96,18 @@ function calculateADV(gen, attacker, defender, move, field) {
         desc.moveType = move.type;
         desc.moveBP = move.bp;
     }
+    var bp = move.bp;
+    var abilityMultiplier = 1; // Track the ability multiplier separately, put radiance type change before effectiveness calc
+
+    switch (attacker.ability) {
+        case 'Radiance':
+            if (move.type == 'Normal') {
+                move.type = 'Aether';
+                abilityMultiplier = 1.3;
+                desc.moveType = move.type;
+            }
+            break;
+    }
     var type1Effectiveness = (0, util_1.getMoveEffectiveness)(gen, move, defender.types[0], field.defenderSide.isForesight);
     var type2Effectiveness = defender.types[1]
         ? (0, util_1.getMoveEffectiveness)(gen, move, defender.types[1], field.defenderSide.isForesight)
@@ -197,19 +209,6 @@ function calculateADV(gen, attacker, defender, move, field) {
     // if (bp === 0) {
     //     return result;
     // }
-    var bp = move.bp;
-    var abilityMultiplier = 1; // Track the ability multiplier separately
-
-    switch (attacker.ability) {
-        case 'Radiance':
-            if (move.type == 'Normal') {
-                move.type = 'Aether';
-                abilityMultiplier = 1.3;
-                desc.moveType = move.type;
-            }
-            break;
-    }
-
     if (bp === 0) {
         return result;
     }
