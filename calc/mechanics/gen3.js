@@ -368,6 +368,10 @@ function calculateADV(gen, attacker, defender, move, field) {
         baseDamage = Math.floor(baseDamage / 2);
         desc.isBurned = true;
     }
+    if (attacker.hasStatus('frz') && !isPhysical) {
+        baseDamage = Math.floor(baseDamage / 2);
+        desc.isFrostbitten = true;
+    }
     if (!isCritical) {
         var screenMultiplier = field.gameType !== 'Singles' ? 2 / 3 : 1 / 2;
         if (isPhysical && field.defenderSide.isReflect) {
