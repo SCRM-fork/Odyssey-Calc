@@ -593,12 +593,6 @@ var RBY = {
 		nfe: true,
 		abilities: { 0: 'Magnet Pull'}
 	},
-	'Farfetch\u2019d': {
-		types: ['Fighting', 'Flying'],
-		bs: { hp: 65, at: 105, df: 65, sa: 50, sd: 65, sp: 105 },
-		weightkg: 150,
-		abilities: { 0: 'Omni-Chase'}
-	},
 	'Doduo': {
 		types: ['Normal', 'Flying'],
 		bs: { hp: 35, at: 85, df: 45, sa: 35, sd: 35, sp: 75 },
@@ -989,12 +983,20 @@ var RBY = {
 		weightkg: 4600,
 		abilities: { 0: 'Gluttony'}
 	},
-	'Farfetch\u2019dALT': {
+	'Farfetch\u2019d': {
+		types: ['Fighting', 'Flying'],
+		bs: { hp: 65, at: 105, df: 65, sa: 50, sd: 65, sp: 105 },
+		weightkg: 150,
+		abilities: { 0: 'Omni-Chase'},
+        otherFormes: ['Farfetch\u2019d-Galar']
+	},
+	'Farfetch\u2019d-Galar': {
 		types: ['Fighting'],
 		bs: { hp: 52, at: 95, df: 55, sa: 58, sd: 62, sp: 55 },
 		weightkg: 554,
 		nfe: true,
-		abilities: { 0: 'Scrappy'}
+		abilities: { 0: 'Scrappy'},
+        baseSpecies: 'Farfetch\u2019d'
 	},
 	'Sirfetch\u2019d': {
 		types: ['Fighting'],
@@ -1029,16 +1031,32 @@ var RBY = {
 		abilities: { 0: 'Multiscale'}
 	},
 	'Kecleon': {
+		types: ['Normal'],
+		bs: { hp: 60, at: 100, df: 75, sa: 60, sd: 120, sp: 40 },
+		weightkg: 800,
+		abilities: { 0: 'Protean'},
+        otherFormes: ['Kecleon-Battlebond']
+	},
+	'Kecleon-Battlebond': {
 		types: ['Normal', 'Aether'],
 		bs: { hp: 75, at: 120, df: 75, sa: 60, sd: 130, sp: 40 },
 		weightkg: 220,
-		abilities: { 0: 'Protean'}
+		abilities: { 0: 'Protean'},
+        baseSpecies: 'Kecleon'
 	},
 	'Mawile': {
+		types: ['Steel'],
+		bs: { hp: 80, at: 90, df: 85, sa: 55, sd: 85, sp: 60 },
+		weightkg: 150,
+		abilities: { 0: 'Intimidate'},
+        otherFormes: ['Mawile-Battlebond']
+	},
+	'Mawile-Battlebond': {
 		types: ['Steel', 'Aether'],
 		bs: { hp: 85, at: 115, df: 100, sa: 55, sd: 95, sp: 50 },
 		weightkg: 235,
-		abilities: { 0: 'Intimidate'}
+		abilities: { 0: 'Intimidate'},
+        baseSpecies: 'Mawile'
 	},
 	'Chikorita': {
 		types: ['Grass'],
@@ -1496,7 +1514,7 @@ var RBY = {
 		nfe: true,
 		abilities: { 0: 'Thick Fat'}
 	},
-	'RagingBolt': {
+	'Raging-Bolt': {
 		types: ['Electric', 'Dragon'],
 		bs: { hp: 125, at: 73, df: 91, sa: 137, sd: 89, sp: 75 },
 		weightkg: 4800,
@@ -1578,7 +1596,7 @@ var RBY = {
 		weightkg: 1724,
 		abilities: { 0: 'Intimidate'}
 	},
-	'WalkinWake': {
+	'Walking-Wake': {
 		types: ['Water', 'Dragon'],
 		bs: { hp: 99, at: 83, df: 91, sa: 125, sd: 83, sp: 109 },
 		weightkg: 2800,
@@ -1669,16 +1687,46 @@ var RBY = {
 		abilities: { 0: 'Sand Stream'}
 	},
 	'Plusle': {
+		types: ['Electric'],
+		bs: { hp: 80, at: 40, df: 95, sa: 50, sd: 95, sp: 55 },
+		weightkg: 23,
+		abilities: { 0: 'Plus'},
+        otherFormes: ['Plusle-Battlebond']
+	},
+	'Plusle-Battlebond': {
 		types: ['Electric', 'Aether'],
 		bs: { hp: 105, at: 40, df: 115, sa: 60, sd: 115, sp: 65 },
 		weightkg: 42,
-		abilities: { 0: 'Abyss Grace'}
+		abilities: { 0: 'Abyss Grace'},
+        baseSpecies: 'Plusle'
 	},
 	'Minun': {
+		types: ['Electric'],
+		bs: { hp: 65, at: 40, df: 55, sa: 95, sd: 55, sp: 105 },
+		weightkg: 125,
+		abilities: { 0: 'Minus'},
+        otherFormes: ['Minun-Battlebond']
+	},
+	'Minun-Battlebond': {
 		types: ['Electric', 'Aether'],
 		bs: { hp: 75, at: 50, df: 65, sa: 120, sd: 65, sp: 125 },
 		weightkg: 42,
-		abilities: { 0: 'Abyss Boost'}
+		abilities: { 0: 'Abyss Boost'},
+        baseSpecies: 'Minun'
+	},
+	'Blaziken': {
+		types: ['Fire', 'Fighting'],
+		bs: { hp: 85, at: 120, df: 70, sa: 110, sd: 70, sp: 80 },
+		weightkg: 484,
+		abilities: { 0: 'Speed Boost'},
+        otherFormes: ['Blaziken-Battlebond']
+	},
+	'Blaziken-Battlebond': {
+		types: ['Fire', 'Aether'],
+		bs: { hp: 80, at: 160, df: 80, sa: 130, sd: 80, sp: 100 },
+		weightkg: 520,
+		abilities: { 0: 'Speed Boost'},
+        baseSpecies: 'Blaziken'
 	},
 	'Celebi': {
 		types: ['Psychic', 'Grass'],
@@ -1824,7 +1872,7 @@ var RBY = {
 		weightkg: 280,
 		abilities: { 0: 'Snow Warning'}
 	},
-	'AbyssEye': {
+	'Abyss Eye': {
 		types: ['Grass', 'Ice'],
 		bs: { hp: 200, at: 100, df: 100, sa: 150, sd: 150, sp: 90 },
 		weightkg: 596,
@@ -1868,12 +1916,6 @@ var RBY = {
 		bs: { hp: 60, at: 85, df: 60, sa: 85, sd: 60, sp: 55 },
 		weightkg: 202,
 		nfe: true,
-		abilities: { 0: 'Speed Boost'}
-	},
-	'BlazikenALT': {
-		types: ['Fire', 'Fighting'],
-		bs: { hp: 85, at: 120, df: 70, sa: 110, sd: 70, sp: 80 },
-		weightkg: 484,
 		abilities: { 0: 'Speed Boost'}
 	},
 	'Mudkip': {
@@ -2097,12 +2139,6 @@ var RBY = {
 		bs: { hp: 80, at: 90, df: 70, sa: 90, sd: 70, sp: 100 },
 		weightkg: 103,
 		abilities: { 0: 'Guts'}
-	},
-	'KecleonALT': {
-		types: ['Normal'],
-		bs: { hp: 60, at: 100, df: 75, sa: 60, sd: 120, sp: 40 },
-		weightkg: 800,
-		abilities: { 0: 'Protean'}
 	},
 	'Baltoy': {
 		types: ['Steel'],
@@ -2331,24 +2367,6 @@ var RBY = {
 		weightkg: 220,
 		abilities: { 0: 'Thick Fat'}
 	},
-	'PlusleALT': {
-		types: ['Electric'],
-		bs: { hp: 80, at: 40, df: 95, sa: 50, sd: 95, sp: 55 },
-		weightkg: 23,
-		abilities: { 0: 'Plus'}
-	},
-	'MinunALT': {
-		types: ['Electric'],
-		bs: { hp: 65, at: 40, df: 55, sa: 95, sd: 55, sp: 105 },
-		weightkg: 125,
-		abilities: { 0: 'Minus'}
-	},
-	'MawileALT': {
-		types: ['Steel'],
-		bs: { hp: 80, at: 90, df: 85, sa: 55, sd: 85, sp: 60 },
-		weightkg: 150,
-		abilities: { 0: 'Intimidate'}
-	},
 	'Meditite': {
 		types: ['Fighting', 'Psychic'],
 		bs: { hp: 40, at: 40, df: 55, sa: 40, sd: 55, sp: 60 },
@@ -2374,12 +2392,6 @@ var RBY = {
 		bs: { hp: 80, at: 75, df: 110, sa: 75, sd: 110, sp: 80 },
 		weightkg: 470,
 		abilities: { 0: 'Natural Cure'}
-	},
-	'Blaziken': {
-		types: ['Fire', 'Aether'],
-		bs: { hp: 80, at: 160, df: 80, sa: 130, sd: 80, sp: 100 },
-		weightkg: 520,
-		abilities: { 0: 'Speed Boost'}
 	},
 	'Duskull': {
 		types: ['Ghost', 'Aether'],
@@ -2540,8 +2552,30 @@ var RBY = {
 		types: ['Normal', 'Aether'],
 		bs: { hp: 85, at: 85, df: 85, sa: 85, sd: 85, sp: 85 },
 		weightkg: 11,
-		abilities: { 0: 'Forecast'}
-	},
+		abilities: { 0: 'Forecast'},
+        otherFormes: ['Castform-Rainy', 'Castform-Snowy', 'Castform-Sunny']
+    },
+    'Castform-Rainy': {
+        types: ['Water'],
+		bs: { hp: 85, at: 85, df: 85, sa: 85, sd: 85, sp: 85 },
+		weightkg: 11,
+        abilities: { 0: 'Forecast' },
+        baseSpecies: 'Castform'
+    },
+    'Castform-Snowy': {
+        types: ['Ice'],
+		bs: { hp: 85, at: 85, df: 85, sa: 85, sd: 85, sp: 85 },
+		weightkg: 11,
+        abilities: { 0: 'Forecast' },
+        baseSpecies: 'Castform'
+    },
+    'Castform-Sunny': {
+        types: ['Fire'],
+		bs: { hp: 85, at: 85, df: 85, sa: 85, sd: 85, sp: 85 },
+		weightkg: 11,
+        abilities: { 0: 'Forecast' },
+        baseSpecies: 'Castform'
+    },
 	'Volbeat': {
 		types: ['Bug', 'Electric'],
 		bs: { hp: 75, at: 60, df: 55, sa: 85, sd: 85, sp: 90 },
