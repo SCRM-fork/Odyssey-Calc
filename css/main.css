@@ -503,15 +503,15 @@ input {
 
 
 #p1 .poke-sprite {
-    transform: scale(2);
+    transform: scale(1);
 }
 
 #p1 .poke-sprite.no-flip {
-    transform: scale(2)
+    transform: scale(1)
 }
 
 #p2 .poke-sprite {
-    transform: scale(2)
+    transform: scale(1)
 }
 
 .pokeweb-link {
