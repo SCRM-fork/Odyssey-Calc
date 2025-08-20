@@ -235,7 +235,7 @@ var RBY = {
 		weightkg: 295,
 		abilities: { 0: 'Sand Rush'}
 	},
-	'NidoranF': {
+	'Nidoran-F': {
 		types: ['Poison'],
 		bs: { hp: 55, at: 40, df: 52, sa: 47, sd: 40, sp: 41 },
 		weightkg: 70,
@@ -255,7 +255,7 @@ var RBY = {
 		weightkg: 600,
 		abilities: { 0: 'Poison Point'}
 	},
-	'NidoranM': {
+	'Nidoran-M': {
 		types: ['Poison'],
 		bs: { hp: 46, at: 57, df: 40, sa: 40, sd: 40, sp: 50 },
 		weightkg: 90,
