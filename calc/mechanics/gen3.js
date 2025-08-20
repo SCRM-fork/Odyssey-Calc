@@ -388,13 +388,8 @@ function calculateADV(gen, attacker, defender, move, field) {
         desc.isSwitching = 'out';
     }
     if (field.gameType !== 'Singles' && move.target === 'allAdjacentFoes') {
-        if (gen >= 4) {
             baseDamage = Math.floor(baseDamage * 0.75);
-            console.log("0.75 not half")
-        } else {
-            baseDamage = Math.floor(baseDamage * 0.75);
-        }
-        
+            console.log("0.75 not half");        
     }
     if ((field.hasWeather('Sun') && move.hasType('Fire')) ||
         (field.hasWeather('Rain') && move.hasType('Water'))) {
