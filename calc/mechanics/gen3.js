@@ -142,6 +142,7 @@ function calculateADV(gen, attacker, defender, move, field) {
             }
             break;
         case 'Chain Killer':
+        case 'HarvestParty':
             if (defender.hasStatus('par', 'psn', 'tox', 'brn', 'slp', 'frz')) {
                 bp = move.bp * 2;
                 desc.moveBP = bp;
@@ -161,6 +162,10 @@ function calculateADV(gen, attacker, defender, move, field) {
             move.category = 'Physical';
             bp = 60;
             desc.moveName = 'Swift';
+            break;
+        case 'Royal Order':
+            bp = move.bp + 20 * (0, util_2.countBoosts)(gen, defender.boosts);
+            desc.moveBP = bp;
             break;
         default:
             bp = move.bp;

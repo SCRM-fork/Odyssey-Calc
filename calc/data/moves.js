@@ -345,7 +345,268 @@ var RBY = {
     'Call Allies': {
 		bp: 50,
 		type: 'Aether',
+        multihit: [1, 6],
 		category: 'Physical'
+	},
+    'Abyss Blaze': {
+		bp: 100,
+		type: 'Aether',
+		category: 'Physical'
+	},
+    'HarvestParty': {
+		bp: 80,
+		type: 'Ground',
+		category: 'Physical',
+		makesContact: true
+	},
+	'Scythe Dance': {
+		bp: 25,
+		type: 'Bug',
+		category: 'Physical',
+        multihit: [2, 5],
+		makesContact: true
+	},
+	'SlashRampage': {
+		bp: 75,
+		type: 'Flying',
+		category: 'Physical',
+		makesContact: true
+	},
+	'Sonic Raid': {
+		bp: 40,
+		type: 'Electr',
+		category: 'Physical',
+		makesContact: true
+	},
+	'Akashic Nova': {
+		bp: 100,
+		type: 'Dragon',
+		category: 'Physical',
+		makesContact: true,
+        target: 'allAdjacentFoes',
+        recoil: [1, 3]
+	},
+	'Demonic Rush': {
+		bp: 100,
+		type: 'Ghost',
+		category: 'Physical'
+	},
+	'Iron Drill': {
+		bp: 40,
+		type: 'Steel',
+		category: 'Physical',
+		makesContact: true
+	},
+	'BafflingStep': {
+		bp: 80,
+		type: 'Normal',
+		category: 'Physical',
+		makesContact: true
+	},
+	'Origin Crush': {
+		bp: 100,
+		type: 'Dark',
+		category: 'Physical',
+		makesContact: true,
+        target: 'allAdjacentFoes'
+	},
+	'Wing Talon': {
+		bp: 85,
+		type: 'Flying',
+		category: 'Physical',
+		makesContact: true
+	},
+	'Rock Hammer': {
+		bp: 80,
+		type: 'Rock',
+		category: 'Physical',
+		makesContact: true
+	},
+	'Mind Bash': {
+		bp: 40,
+		type: 'Aether',
+		category: 'Physical',
+		makesContact: true
+	},
+	'Cosmic Slash': {
+		bp: 75,
+		type: 'Aether',
+		category: 'Physical',
+		makesContact: true
+	},
+	'Energy Edge': {
+		bp: 90,
+		type: 'Aether',
+		category: 'Physical',
+		makesContact: true
+	},
+	'Yggdraslash': {
+		bp: 90,
+		type: 'Aether',
+		category: 'Physical',
+		makesContact: true
+	},
+	'Yggdrain': {
+		bp: 90,
+		type: 'Aether',
+		category: 'Physical',
+        drain: [1, 2],
+		makesContact: true
+	},
+	'5-Ring Sword': {
+		bp: 30,
+		type: 'Aether',
+		category: 'Physical',
+        multihit: [2, 5],
+		makesContact: true
+	},
+	'Soul Trade': {
+		bp: 85,
+		type: 'Aether',
+		category: 'Physical',
+        drain: [1, 2],
+		makesContact: true
+	},
+	'Megalodive': {
+		bp: 90,
+		type: 'Aether',
+		category: 'Physical',
+		makesContact: true,
+        target: 'allAdjacentFoes'
+	},
+	'Crazed Shout': {
+		bp: 80,
+		type: 'Psychc',
+		category: 'Special'
+	},
+	'Venom Gust': {
+		bp: 90,
+		type: 'Poison',
+		category: 'Special'
+	},
+	'Subzero Gale': {
+		bp: 90,
+		type: 'Ice',
+		category: 'Special',
+        target: 'allAdjacentFoes'
+	},
+	'Icy Aria': {
+		bp: 90,
+		type: 'Ice',
+		category: 'Special',
+        target: 'allAdjacentFoes'
+	},
+	'Rapid Fire': {
+		bp: 30,
+		type: 'Fire',
+		category: 'Special',
+        multihit: [2, 5]
+	},
+	'Divine Storm': {
+		bp: 85,
+		type: 'Electr',
+		category: 'Special',
+        target: 'allAdjacentFoes'
+	},
+	'Mesmerize': {
+		bp: 75,
+		type: 'Psychc',
+		category: 'Special'
+	},
+	'Arcane Blast': {
+		bp: 110,
+		type: 'Psychc',
+		category: 'Special',
+        target: 'allAdjacentFoes'
+	},
+	'Royal Order': {
+		bp: 65,
+		type: 'Psychc',
+		category: 'Special'
+	},
+	'FreezeRipple': {
+		bp: 95,
+		type: 'Ice',
+		category: 'Special',
+        target: 'allAdjacentFoes'
+	},
+	'Ocean Rave': {
+		bp: 120,
+		type: 'Water',
+		category: 'Special',
+        target: 'allAdjacentFoes'
+	},
+	'Solar Flame': {
+		bp: 130,
+		type: 'Fire',
+		category: 'Special',
+        target: 'allAdjacentFoes',
+        recoil: [1, 3]
+	},
+	'Toxic Herb': {
+		bp: 70,
+		type: 'Grass',
+		category: 'Special',
+        target: 'allAdjacentFoes'
+	},
+	'Weird Potion': {
+		bp: 80,
+		type: 'Grass',
+		category: 'Special'
+	},
+	'Potion Bomb': {
+		bp: 80,
+		type: 'Psychc',
+		category: 'Special'
+	},
+	'Shatter Shot': {
+		bp: 100,
+		type: 'Rock',
+		category: 'Special',
+        recoil: [1, 4]
+	},
+	'Light Shot': {
+		bp: 40,
+		type: 'Aether',
+		category: 'Special'
+	},
+	'Astral Gleam': {
+		bp: 75,
+		type: 'Aether',
+		category: 'Special',
+        target: 'allAdjacentFoes'
+	},
+	'Radiant Star': {
+		bp: 90,
+		type: 'Aether',
+		category: 'Special'
+	},
+	'Wilt. Miasma': {
+		bp: 0,
+		type: 'Dark',
+		category: 'Special',
+        target: 'allAdjacentFoes'
+	},
+	'Ad Nihilo': {
+		bp: 90,
+		type: 'Aether',
+		category: 'Special'
+	},
+	'Meteor': {
+		bp: 140,
+		type: 'Aether',
+		category: 'Special'
+	},
+	'Azure Flood': {
+		bp: 80,
+		type: 'Aether',
+		category: 'Special'
+	},
+	'Star Drop': {
+		bp: 0,
+		type: 'Aether',
+		category: 'Special',
+		makesContact: true
 	},
     'Water Gun': { bp: 40, type: 'Water' },
     Withdraw: { bp: 0, category: 'Status', type: 'Water' }
@@ -481,7 +742,7 @@ var GSC_PATCH = {
     Megahorn: { bp: 120, type: 'Bug' },
     'Metal Claw': { bp: 50, type: 'Steel' },
     'Mud-Slap': { bp: 20, type: 'Ground' },
-    Octazooka: { bp: 65, type: 'Water' },
+    Octazooka: { bp: 65, type: 'Water', priority: 2 },
     'Pain Split': { bp: 0, category: 'Status', type: 'Normal' },
     'Shadow Ball': { bp: 80, type: 'Ghost' },
     'Sludge Bomb': { bp: 90, type: 'Poison' },

@@ -120,6 +120,23 @@ var ADV = [
     'Water Veil',
     'White Smoke',
     'Wonder Guard',
+    'Abyss Boost',
+    'Abyss Grace',
+    'Radiance',
+    'Botanist',
+    'Eerie Aura',
+    'Venom Blood',
+    'Arcanist',
+    'Jungle King',
+    'Omnihunter',
+    'Fafnir',
+    'Dragon Fruit',
+    'Intense Care',
+    'Sovereignty',
+    'Omni-Chase',
+    'Prism Lens',
+    'Singularity',
+      
 ];
 var DPP = ADV.concat([
     'Adaptability',

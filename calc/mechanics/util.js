@@ -524,7 +524,7 @@ if (damageGen != 8 && damageGen != 7) {
     }
     exports.getEVDescriptionText = getEVDescriptionText;
     function handleFixedDamageMoves(attacker, move) {
-        if (move.named('Seismic Toss', 'Night Shade')) {
+        if (move.named('Seismic Toss', 'Night Shade', 'Star Drop')) {
             return attacker.level;
         }
         else if (move.named('Dragon Rage')) {
@@ -999,7 +999,7 @@ function getEVDescriptionText(gen, pokemon, stat, natureName) {
 }
 exports.getEVDescriptionText = getEVDescriptionText;
 function handleFixedDamageMoves(attacker, move) {
-    if (move.named('Seismic Toss', 'Night Shade')) {
+    if (move.named('Seismic Toss', 'Night Shade', 'Star Drop')) {
         return attacker.level;
     }
     else if (move.named('Dragon Rage')) {
