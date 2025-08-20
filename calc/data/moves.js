@@ -581,11 +581,10 @@ var RBY = {
 		type: 'Aether',
 		category: 'Special'
 	},
-	'Wilt. Miasma': {
-		bp: 0,
-		type: 'Dark',
-		category: 'Special',
-        target: 'allAdjacentFoes'
+	'Abyss Miasma': {
+		bp: 95,
+		type: 'Aether',
+		category: 'Special'
 	},
 	'Ad Nihilo': {
 		bp: 90,

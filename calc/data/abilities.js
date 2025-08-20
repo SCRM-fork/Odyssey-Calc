@@ -135,8 +135,7 @@ var ADV = [
     'Sovereignty',
     'Omni-Chase',
     'Prism Lens',
-    'Singularity',
-      
+    'Singularity', 
 ];
 var DPP = ADV.concat([
     'Adaptability',
