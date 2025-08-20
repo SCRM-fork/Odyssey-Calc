@@ -367,60 +367,139 @@ function haveSameMiddleSubstring(str1, str2="") {
 }
 
 
-function get_trainer_poks(trainer_name)
-{
-    var all_poks = SETDEX_BW
-    var matches = []
+// function get_trainer_poks(trainer_name)
+// {
+//     var all_poks = SETDEX_BW
+//     var matches = []
 
-    var og_trainer_name = trainer_name.split(/Lvl [-+]?\d+ /)[1]
+//     var og_trainer_name = trainer_name.split(/Lvl [-+]?\d+ /)[1]
 
 
+//     if (og_trainer_name) {
+//         og_trainer_name = og_trainer_name.replace(/.?\)/, "")
+//     }
+
+//     let sameLocation = haveSameMiddleSubstring(og_trainer_name, partner_name)
+
+//     let og_white_space = " "
+//     let partner_white_space = " "
+
+//     if (og_trainer_name && og_trainer_name.includes(" - ")) {
+//         og_white_space = ""
+//     }
+
+//     if (partner_name && partner_name.includes(" - ")) {
+//         partner_white_space = ""
+//     }
+
+
+//     for (i in TR_NAMES) {
+
+//         if (TR_NAMES[i].includes(og_trainer_name + og_white_space) || ((TR_NAMES[i].includes(partner_name + partner_white_space)))) {
+//             if (og_trainer_name.split(" ").at(-1) == TR_NAMES[i].split(" ").at(-2) || (og_trainer_name.split(" ").at(-2) == TR_NAMES[i].split(" ").at(-2))) {
+//                matches.push(TR_NAMES[i])
+
+//             }
+//             if (partner_name && !sameLocation) {
+//                 if (partner_name.split(" ").at(-1) == TR_NAMES[i].split(" ").at(-2) || (partner_name.split(" ").at(-2) == TR_NAMES[i].split(" ").at(-2))) {
+//                    matches.push(TR_NAMES[i])
+//                 }  
+//             }    
+//         }
+//     }
+
+//     if (matches.length == 0) {
+//         for (i in TR_NAMES) {
+
+//             if (TR_NAMES[i].includes(og_trainer_name)) {
+//                 if (og_trainer_name.split(" ").at(-1) == TR_NAMES[i].split(" ").at(-2) || (og_trainer_name.split(" ").at(-2) == TR_NAMES[i].split(" ").at(-2))) {
+//                    matches.push(TR_NAMES[i])
+//                 }    
+//             }
+//         }
+//     }
+//     return matches
+// }
+function get_trainer_poks(trainer_name) {
+    const all_poks = SETDEX_BW;
+    const matches = [];
+
+    // Extract trainer name after "Lvl X "
+    let og_trainer_name = trainer_name.split(/Lvl [-+]?\d+ /)[1];
     if (og_trainer_name) {
-        og_trainer_name = og_trainer_name.replace(/.?\)/, "")
+        og_trainer_name = og_trainer_name.replace(/.?\)/, "");
     }
 
-    let sameLocation = haveSameMiddleSubstring(og_trainer_name, partner_name)
+    // partner_name must exist (otherwise empty string)
+    const partner = partner_name || "";
 
-    let og_white_space = " "
-    let partner_white_space = " "
+    const sameLocation = og_trainer_name && partner
+        ? haveSameMiddleSubstring(og_trainer_name, partner)
+        : false;
 
-    if (og_trainer_name && og_trainer_name.includes(" - ")) {
-        og_white_space = ""
+    let og_white_space = " ";
+    let partner_white_space = " ";
+
+    if (og_trainer_name && og_trainer_name.includes(" - ")) og_white_space = "";
+    if (partner && partner.includes(" - ")) partner_white_space = "";
+
+    function lastTwoParts(name) {
+        if (!name) return { last: undefined, secondLast: undefined };
+        const parts = name.split(" ");
+        return {
+            last: parts.slice(-1)[0],
+            secondLast: parts.slice(-2, -1)[0]
+        };
     }
 
-    if (partner_name && partner_name.includes(" - ")) {
-        partner_white_space = ""
-    }
+    const ogParts = lastTwoParts(og_trainer_name);
+    const partnerParts = lastTwoParts(partner);
 
+    // First pass
+    for (const i in TR_NAMES) {
+        const trName = TR_NAMES[i];
+        const trParts = lastTwoParts(trName);
 
-    for (i in TR_NAMES) {
-
-        if (TR_NAMES[i].includes(og_trainer_name + og_white_space) || ((TR_NAMES[i].includes(partner_name + partner_white_space)))) {
-            if (og_trainer_name.split(" ").at(-1) == TR_NAMES[i].split(" ").at(-2) || (og_trainer_name.split(" ").at(-2) == TR_NAMES[i].split(" ").at(-2))) {
-               matches.push(TR_NAMES[i])
-
+        if (
+            (og_trainer_name && trName.includes(og_trainer_name + og_white_space)) ||
+            (partner && trName.includes(partner + partner_white_space))
+        ) {
+            if (
+                (ogParts.last && trParts.secondLast && ogParts.last === trParts.secondLast) ||
+                (ogParts.secondLast && trParts.secondLast && ogParts.secondLast === trParts.secondLast)
+            ) {
+                matches.push(trName);
             }
-            if (partner_name && !sameLocation) {
-                if (partner_name.split(" ").at(-1) == TR_NAMES[i].split(" ").at(-2) || (partner_name.split(" ").at(-2) == TR_NAMES[i].split(" ").at(-2))) {
-                   matches.push(TR_NAMES[i])
-                }  
-            }    
+            if (partner && !sameLocation) {
+                if (
+                    (partnerParts.last && trParts.secondLast && partnerParts.last === trParts.secondLast) ||
+                    (partnerParts.secondLast && trParts.secondLast && partnerParts.secondLast === trParts.secondLast)
+                ) {
+                    matches.push(trName);
+                }
+            }
         }
     }
 
-    if (matches.length == 0) {
-        for (i in TR_NAMES) {
+    // Fallback pass if no matches
+    if (matches.length === 0 && og_trainer_name) {
+        for (const i in TR_NAMES) {
+            const trName = TR_NAMES[i];
+            const trParts = lastTwoParts(trName);
 
-            if (TR_NAMES[i].includes(og_trainer_name)) {
-                if (og_trainer_name.split(" ").at(-1) == TR_NAMES[i].split(" ").at(-2) || (og_trainer_name.split(" ").at(-2) == TR_NAMES[i].split(" ").at(-2))) {
-                   matches.push(TR_NAMES[i])
-                }    
+            if (trName.includes(og_trainer_name)) {
+                if (
+                    (ogParts.last && trParts.secondLast && ogParts.last === trParts.secondLast) ||
+                    (ogParts.secondLast && trParts.secondLast && ogParts.secondLast === trParts.secondLast)
+                ) {
+                    matches.push(trName);
+                }
             }
         }
     }
-    return matches
+
+    return matches;
 }
-
 
 
 function box_rolls() {
