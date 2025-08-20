@@ -324,12 +324,12 @@ input[type="file"] {
     height: 40px;
     line-height: 34px;
     border-radius: 0px;
-    max-width: 617px;
+    /*max-width: 617px;*/
 }
 
 .opposing .select2-choice {
     padding-right: 30px;
-    max-width: 586px;
+    /*max-width: 586px;*/
 }
 
 select {
@@ -454,15 +454,15 @@ input {
 .poke-sprite { 
     position: absolute;
     max-width: calc(100% - 430px);
-    right: 68px;
-    top: 112px;
-    /* background: rgba(255,255,255,0.1);*/ */
+    right: 13px;
+    top: 80px;
+/*    background: rgba(255,255,255,0.1);*/
     border-bottom-left-radius: 10px;
-    height: 100px;
+    height: 96px;
     background-size: cover;
     background-repeat: no-repeat;
-    border-radius:  18px;
-    padding: 8px;
+    border-radius:  20px;
+    padding: 20px;
     z-index:  12;
 }
 
@@ -503,15 +503,11 @@ input {
 
 
 #p1 .poke-sprite {
-    transform: scale(1);
+    transform: scaleX(-1);
 }
 
 #p1 .poke-sprite.no-flip {
-    transform: scale(1)
-}
-
-#p2 .poke-sprite {
-    transform: scale(1)
+    transform: scaleX(1)
 }
 
 .pokeweb-link {
@@ -955,8 +951,8 @@ table td {
 
 .info-group.info-selectors {
     position: absolute;
-    right: 22px;
-    top: 280px;
+    right: 0;
+    top: 240px;
     max-width: calc(100% - 390px);
 }
 
@@ -1666,7 +1662,9 @@ table.field {
   }
 
   .poke-sprite {
-    display: none;
+    height: 60px;
+    max-width: initial;
+    top: 120px;
   }
 
   .wrapper {
@@ -1950,6 +1948,3 @@ table.field {
 
 
 }
-
-
-
