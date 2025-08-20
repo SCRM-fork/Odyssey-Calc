@@ -69,6 +69,11 @@ function calculateADV(gen, attacker, defender, move, field) {
         desc.isProtected = true;
         return result;
     }
+    // if (attacker.hasAbility('Radiance') && move.type == 'Normal') {
+    //     move.type = 'Aether';
+    //     desc.moveType = move.type;
+    //     desc.moveBP = move.bp;
+    // }
     if (move.named('Weather Ball')) {
         move.type =
             field.hasWeather('Sun') ? 'Fire'
@@ -117,46 +122,130 @@ function calculateADV(gen, attacker, defender, move, field) {
     if (move.hits > 1) {
         desc.hits = move.hits;
     }
+    // var bp = move.bp;
+    // switch (attacker.ability) {
+    //     case 'Radiance':
+    //         if (move.type == 'Normal') {
+    //         move.type = 'Aether';
+    //         bp = move.bp * 2;
+    //         desc.moveType = move.type;
+    //         desc.moveBP = bp;
+    //         }
+    //         else {
+    //         bp = move.bp;
+    //         desc.moveBP = bp;
+    //         }
+    //         break;
+    //     default:
+    //         bp = move.bp;
+    // }
+    // if (bp === 0) {
+    //     return result;
+    // }
+    // switch (move.name) {
+    //     case 'Flail':
+    //     case 'Reversal':
+    //         var p = Math.floor((48 * attacker.curHP()) / attacker.maxHP());
+    //         bp = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
+    //         desc.moveBP = bp;
+    //         break;
+    //     case 'Eruption':
+    //     case 'Water Spout':
+    //         bp = Math.max(1, Math.floor((150 * attacker.curHP()) / attacker.maxHP()));
+    //         desc.moveBP = bp;
+    //         break;
+    //     case 'Low Kick':
+    //         var w = defender.weightkg;
+    //         bp = w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
+    //         desc.moveBP = bp;
+    //         break;
+    //     case 'Facade':
+    //         if (attacker.hasStatus('par', 'psn', 'tox', 'brn')) {
+    //             bp = move.bp * 2;
+    //             desc.moveBP = bp;
+    //         }
+    //         break;
+    //     case 'Chain Killer':
+    //     case 'HarvestParty':
+    //         if (defender.hasStatus('par', 'psn', 'tox', 'brn', 'slp', 'frz')) {
+    //             bp = move.bp * 2;
+    //             desc.moveBP = bp;
+    //         }
+    //         break;
+    //     case 'Leading Blow':
+    //         if (defender.hasStatus('par', 'psn', 'tox', 'brn', 'slp')) {
+    //             bp = move.bp * 2;
+    //             desc.moveBP = bp;
+    //         }
+    //         break;
+    //     case 'Titan Killer':
+    //         bp = Math.floor((defender.curHP() * 150) / defender.maxHP());
+    //         desc.moveBP = bp;
+    //         break;
+    //     case 'Nature Power':
+    //         move.category = 'Physical';
+    //         bp = 60;
+    //         desc.moveName = 'Swift';
+    //         break;
+    //     case 'Royal Order':
+    //         bp = move.bp + 20 * (0, util_2.countBoosts)(gen, defender.boosts);
+    //         desc.moveBP = bp;
+    //         break;
+    //     default:
+    //         bp = move.bp;
+    // }
+    // if (bp === 0) {
+    //     return result;
+    // }
     var bp = move.bp;
+    var abilityMultiplier = 1; // Track the ability multiplier separately
+
+    switch (attacker.ability) {
+        case 'Radiance':
+            if (move.type == 'Normal') {
+                move.type = 'Aether';
+                abilityMultiplier = 1.3;
+                desc.moveType = move.type;
+            }
+            break;
+    }
+
+    if (bp === 0) {
+        return result;
+    }
+
     switch (move.name) {
         case 'Flail':
         case 'Reversal':
             var p = Math.floor((48 * attacker.curHP()) / attacker.maxHP());
             bp = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
-            desc.moveBP = bp;
             break;
         case 'Eruption':
         case 'Water Spout':
             bp = Math.max(1, Math.floor((150 * attacker.curHP()) / attacker.maxHP()));
-            desc.moveBP = bp;
             break;
         case 'Low Kick':
             var w = defender.weightkg;
             bp = w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
-            desc.moveBP = bp;
             break;
         case 'Facade':
             if (attacker.hasStatus('par', 'psn', 'tox', 'brn')) {
                 bp = move.bp * 2;
-                desc.moveBP = bp;
             }
             break;
         case 'Chain Killer':
         case 'HarvestParty':
             if (defender.hasStatus('par', 'psn', 'tox', 'brn', 'slp', 'frz')) {
                 bp = move.bp * 2;
-                desc.moveBP = bp;
             }
             break;
         case 'Leading Blow':
             if (defender.hasStatus('par', 'psn', 'tox', 'brn', 'slp')) {
                 bp = move.bp * 2;
-                desc.moveBP = bp;
             }
             break;
         case 'Titan Killer':
             bp = Math.floor((defender.curHP() * 150) / defender.maxHP());
-            desc.moveBP = bp;
             break;
         case 'Nature Power':
             move.category = 'Physical';
@@ -165,14 +254,13 @@ function calculateADV(gen, attacker, defender, move, field) {
             break;
         case 'Royal Order':
             bp = move.bp + 20 * (0, util_2.countBoosts)(gen, defender.boosts);
-            desc.moveBP = bp;
             break;
-        default:
-            bp = move.bp;
     }
-    if (bp === 0) {
-        return result;
-    }
+
+    // Apply ability multiplier AFTER move-specific calculations
+    bp = Math.floor(bp * abilityMultiplier);
+    desc.moveBP = bp;
+
     var isPhysical = move.category === 'Physical';
     
     
@@ -265,6 +353,7 @@ function calculateADV(gen, attacker, defender, move, field) {
     var isCritical = move.isCrit && !defender.hasAbility('Battle Armor', 'Shell Armor');
     var attackBoost = attacker.boosts[attackStat];
     var defenseBoost = defender.boosts[defenseStat];
+    // var speedBoost = defender.boosts[defenseStat];
     if (attackBoost > 0 || (!isCritical && attackBoost < 0)) {
         at = (0, util_1.getModifiedStat)(at, attackBoost);
         desc.attackBoost = attackBoost;
@@ -318,6 +407,60 @@ function calculateADV(gen, attacker, defender, move, field) {
         baseDamage = Math.floor(baseDamage * 1.5);
         desc.attackerAbility = 'Flash Fire';
     }
+    const abilityBoosts = [
+    { ability: 'Eerie Aura',     types: ['Ghost'],          multiplier: 1.2 },
+    { ability: 'Arcanist',       types: ['Psychic'],        multiplier: 1.2 },
+    { ability: 'Venom Blood',    types: ['Poison'],         multiplier: 1.5 },
+    { ability: 'Omnihunter',     types: ['Flying'],         multiplier: 1.5 },
+    { ability: 'Dragon Fruit',   types: ['Dragon'],         multiplier: 1.5 },
+    { ability: 'Prism Lens',     types: ['Psychic'],        multiplier: 1.5 },
+    { ability: 'Jungle King',    types: ['Ground','Fighting'], multiplier: 1.5 },
+    { ability: 'Fafnir',         types: ['Dragon','Electric'], multiplier: 1.2 },
+    { ability: 'Singularity',    types: ['Fire','Ice'],     multiplier: 1.25 }
+    ];
+    for (const { ability, types, multiplier } of abilityBoosts) {
+    if (attacker.hasAbility(ability) && types.some(t => move.hasType(t))) {
+        baseDamage = Math.floor(baseDamage * multiplier);
+        desc.attackerAbility = ability;
+        break; // stop after first match
+    }
+    }
+    // if (attacker.hasAbility('Eerie Aura') && move.hasType('Ghost')) {
+    //     baseDamage = Math.floor(baseDamage * 1.2);
+    //     desc.attackerAbility = 'Eerie Aura';
+    // }
+    // if (attacker.hasAbility('Arcanist') && move.hasType('Psychic')) {
+    //     baseDamage = Math.floor(baseDamage * 1.2);
+    //     desc.attackerAbility = 'Arcanist';
+    // }
+    // if (attacker.hasAbility('Venom Blood') && move.hasType('Poison')) {
+    //     baseDamage = Math.floor(baseDamage * 1.5);
+    //     desc.attackerAbility = 'Venom Blood';
+    // }
+    // if (attacker.hasAbility('Omnihunter') && move.hasType('Flying')) {
+    //     baseDamage = Math.floor(baseDamage * 1.5);
+    //     desc.attackerAbility = 'Omnihunter';
+    // }
+    // if (attacker.hasAbility('Dragon Fruit') && move.hasType('Dragon')) {
+    //     baseDamage = Math.floor(baseDamage * 1.5);
+    //     desc.attackerAbility = 'Dragon Fruit';
+    // }
+    // if (attacker.hasAbility('Prism Lens') && move.hasType('Psychic')) {
+    //     baseDamage = Math.floor(baseDamage * 1.5);
+    //     desc.attackerAbility = 'Prism Lens';
+    // }
+    // if (attacker.hasAbility('Jungle King') && (move.hasType('Ground') || move.hasType('Fighting'))) {
+    //     baseDamage = Math.floor(baseDamage * 1.5);
+    //     desc.attackerAbility = 'Jungle King';
+    // }
+    // if (attacker.hasAbility('Fafnir') && (move.hasType('Dragon') || move.hasType('Electric'))) {
+    //     baseDamage = Math.floor(baseDamage * 1.2);
+    //     desc.attackerAbility = 'Fafnir';
+    // }
+    // if (attacker.hasAbility('Singularity') && (move.hasType('Fire') || move.hasType('Ice'))) {
+    //     baseDamage = Math.floor(baseDamage * 1.25);
+    //     desc.attackerAbility = 'Singularity';
+    // }
     baseDamage = (move.category === 'Physical' ? Math.max(1, baseDamage) : baseDamage) + 2;
     if (isCritical) {
         baseDamage *= 2;

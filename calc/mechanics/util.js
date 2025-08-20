@@ -151,6 +151,9 @@ if (damageGen != 8 && damageGen != 7) {
         else if (pokemon.hasAbility('Quick Feet') && pokemon.status) {
             speedMods.push(6144);
         }
+        else if (pokemon.hasAbility('Omni-Chase') && (weather.includes('Sun') || weather.includes('Rain') || weather.includes('Sand') || weather.includes('Hail'))) {
+            speedMods.push(6144);
+        }
         else if (pokemon.hasAbility('Slow Start') && pokemon.abilityOn) {
             speedMods.push(2048);
         }
@@ -688,6 +691,9 @@ function getFinalSpeed(gen, pokemon, field, side) {
         (pokemon.hasAbility('Slush Rush') && weather === 'Hail') ||
         (pokemon.hasAbility('Surge Surfer') && terrain === 'Electric')) {
         speed *= 2;
+    }
+    if (pokemon.hasAbility('Omni-Chase') && (weather.includes('Sun') || weather.includes('Rain') || weather.includes('Sand') || weather.includes('Hail'))) {
+        speed *= 1.5;
     }
     // else if (pokemon.named('Cherrim') && pokemon.hasAbility('Flower Gift') && weather.includes('Sun')) {
     //     speed *= 1.5;
