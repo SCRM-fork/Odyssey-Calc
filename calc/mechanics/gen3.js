@@ -299,7 +299,7 @@ function calculateADV(gen, attacker, defender, move, field) {
             baseDamage = Math.floor(baseDamage * 0.75);
             console.log("0.75 not half")
         } else {
-            baseDamage = Math.floor(baseDamage / 2);
+            baseDamage = Math.floor(baseDamage * 0.75);
         }
         
     }
