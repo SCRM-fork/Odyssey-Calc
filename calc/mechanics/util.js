@@ -160,6 +160,9 @@ if (damageGen != 8 && damageGen != 7) {
         if (pokemon.hasItem('Choice Scarf')) {
             speedMods.push(6144);
         }
+        if (pokemon.hasItem('Winged Boots')) {
+            speedMods.push(4710);
+        }
         else if (pokemon.hasItem.apply(pokemon, __spreadArray(['Iron Ball'], __read(EV_ITEMS), false))) {
             speedMods.push(2048);
         }

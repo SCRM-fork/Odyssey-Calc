@@ -69,6 +69,8 @@ function getItemBoostType(item) {
         case 'Pink Bow':
         case 'Polkadot Bow':
             return 'Normal';
+        case 'Star Pendant':
+            return 'Aether';
         default:
             return undefined;
     }

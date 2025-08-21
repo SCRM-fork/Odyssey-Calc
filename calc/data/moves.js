@@ -2247,7 +2247,7 @@ var XY_PATCH = {
     },
     'King\'s Shield': { bp: 0, type: 'Steel', priority: 4 },
     'Misty Terrain': { bp: 0, type: 'Fairy' },
-    'Mystical Fire': {
+    'Mysticalfire': {
         bp: 65,
         type: 'Fire',
         category: 'Special',

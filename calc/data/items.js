@@ -218,6 +218,11 @@ var ADV = GSC.filter(function (i) { return !GSC_ONLY.includes(i); }).concat([
     'Wepear Berry',
     'White Herb',
     'Wiki Berry',
+    'Winged Boots',
+    'Assault Vest',
+    'Eviolite',
+    'Expert Belt',
+    'Star Pendant', 
 ]);
 var DPP = ADV.concat([
     'Adamant Orb',
@@ -244,7 +249,6 @@ var DPP = ADV.concat([
     'Dusk Stone',
     'Earth Plate',
     'Electirizer',
-    'Expert Belt',
     'Fist Plate',
     'Flame Orb',
     'Flame Plate',
@@ -333,7 +337,6 @@ var BW = DPP.concat([
     'Dream Ball',
     'Eject Button',
     'Electric Gem',
-    'Eviolite',
     'Fighting Gem',
     'Fire Gem',
     'Float Stone',
@@ -414,7 +417,6 @@ exports.MEGA_STONES = {
     Venusaurite: 'Venusaur'
 };
 var XY = BW.concat(__spreadArray(__spreadArray([], __read(Object.keys(exports.MEGA_STONES)), false), [
-    'Assault Vest',
     'Blue Orb',
     'Fairy Gem',
     'Jaw Fossil',

@@ -318,6 +318,22 @@ function calculateADV(gen, attacker, defender, move, field) {
         df = Math.floor(df * 1.5);
         desc.defenderItem = defender.item;
     }
+    if (!isPhysical && defender.hasItem('Assault Vest')) {
+        df = Math.floor(df * 1.5);
+        desc.defenderItem = defender.item;
+    }
+    if (defender.hasItem('Eviolite')) {
+        df = Math.floor(df * 1.5);
+        desc.defenderItem = defender.item;
+    }
+    if (defender.hasAbility('Fur Coat') && isPhysical) {
+        df = Math.floor(df * 2);
+        desc.defenderAbility = defender.ability;
+    }
+    if (attacker.hasItem('Expert Belt') && typeEffectiveness > 1) {
+        at = Math.floor(at * 1.2);
+        desc.attackerItem = attacker.item;
+    }
     else if ((!isPhysical && defender.hasItem('Deep Sea Scale') && defender.named('Clamperl')) ||
         (isPhysical && defender.hasItem('Metal Powder') && defender.named('Ditto'))) {
         df *= 2;
@@ -404,6 +420,10 @@ function calculateADV(gen, attacker, defender, move, field) {
     if (attacker.hasAbility('Flash Fire') && attacker.abilityOn && move.hasType('Fire')) {
         baseDamage = Math.floor(baseDamage * 1.5);
         desc.attackerAbility = 'Flash Fire';
+    }
+    if (attacker.hasItem('Life Orb') && !move.named('Future Sight') && !move.named('Doom Desire')) {
+        baseDamage = Math.floor(baseDamage * 1.3);    
+        desc.attackerItem = attacker.item;
     }
     const abilityBoosts = [
     { ability: 'Eerie Aura',     types: ['Ghost'],          multiplier: 1.2 },
