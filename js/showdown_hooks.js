@@ -1734,6 +1734,18 @@ function get_current_learnset() {
     
     $(".tms").html(tm_html)
 
+    var tutor_html = ""
+
+    if (current_learnset["tutor"]) {
+        for (let i = 0; i < current_learnset["tutor"].length; i++) {
+            var mv_name = current_learnset["tutor"][i]
+            tutor_html += `<div class='ls-row'><div class='ls-name'>${mv_name}</div></div>`
+        }
+
+    }
+    
+    $(".tutor").html(tutor_html)
+
     return current_learnset    
 }
 
