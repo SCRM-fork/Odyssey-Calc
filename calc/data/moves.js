@@ -524,7 +524,7 @@ var RBY = {
 		type: 'Psychc',
 		category: 'Special'
 	},
-	'FreezeRipple': {
+	'Freezeripple': {
 		bp: 95,
 		type: 'Ice',
 		category: 'Special',
@@ -619,6 +619,13 @@ var RBY = {
 		category: 'Physical',
 		makesContact: true
 	},
+    'Phantomforce': {
+        bp: 90,
+        type: 'Ghost',
+        breaksProtect: true,
+        makesContact: true,
+        category: 'Physical'
+    },
     'Water Gun': { bp: 40, type: 'Water' },
     Withdraw: { bp: 0, category: 'Status', type: 'Water' }
 };
