@@ -1189,13 +1189,13 @@ var RBY = {
 		weightkg: 225,
 		abilities: { 0: 'Volt Absorb'}
 	},
-	'ScreamTail': {
+	'Screamtail': {
 		types: ['Psychic'],
 		bs: { hp: 115, at: 65, df: 99, sa: 65, sd: 115, sp: 111 },
 		weightkg: 80,
 		abilities: { 0: 'Filter'}
 	},
-	'SandyShock': {
+	'Sandyshock': {
 		types: ['Electric', 'Ground'],
 		bs: { hp: 85, at: 81, df: 97, sa: 121, sd: 85, sp: 101 },
 		weightkg: 600,
