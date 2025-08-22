@@ -1533,7 +1533,7 @@ var RBY = {
 		weightkg: 285,
 		abilities: { 0: 'Swift Swim'}
 	},
-	'GouginFire': {
+	'Gouginfire': {
 		types: ['Fire', 'Dragon'],
 		bs: { hp: 105, at: 115, df: 121, sa: 65, sd: 93, sp: 91 },
 		weightkg: 5900,
