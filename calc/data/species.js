@@ -2264,7 +2264,7 @@ var RBY = {
 		weightkg: 525,
 		abilities: { 0: 'Thick Fat'}
 	},
-	'Electricike': {
+	'Electrike': {
 		types: ['Electric'],
 		bs: { hp: 40, at: 45, df: 40, sa: 65, sd: 40, sp: 65 },
 		weightkg: 1680,
