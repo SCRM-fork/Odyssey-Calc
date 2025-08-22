@@ -705,7 +705,7 @@ var RBY = {
 		nfe: true,
 		abilities: { 0: 'Soundproof'}
 	},
-	'Electricode': {
+	'Electrode': {
 		types: ['Electric', 'Grass'],
 		bs: { hp: 60, at: 50, df: 70, sa: 85, sd: 80, sp: 160 },
 		weightkg: 666,
