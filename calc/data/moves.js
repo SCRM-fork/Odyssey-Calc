@@ -626,6 +626,19 @@ var RBY = {
         makesContact: true,
         category: 'Physical'
     },
+        Bulldoze: {
+        bp: 60,
+        type: 'Ground',
+        target: 'allAdjacentFoes',
+        category: 'Physical',
+        secondaries: true
+    },
+    'Hihorsepower': {
+        bp: 95,
+        type: 'Ground',
+        makesContact: true,
+        category: 'Physical'
+    },
     'Water Gun': { bp: 40, type: 'Water' },
     Withdraw: { bp: 0, category: 'Status', type: 'Water' }
 };
@@ -1938,13 +1951,13 @@ var BW_PATCH = {
         category: 'Physical',
         secondaries: true
     },
-    Bulldoze: {
-        bp: 60,
-        type: 'Ground',
-        target: 'allAdjacent',
-        category: 'Physical',
-        secondaries: true
-    },
+    // Bulldoze: {
+    //     bp: 60,
+    //     type: 'Ground',
+    //     target: 'allAdjacent',
+    //     category: 'Physical',
+    //     secondaries: true
+    // },
     'Circle Throw': {
         bp: 60,
         type: 'Fighting',
