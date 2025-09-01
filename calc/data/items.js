@@ -224,6 +224,7 @@ var ADV = GSC.filter(function (i) { return !GSC_ONLY.includes(i); }).concat([
     'Eviolite',
     'Expert Belt',
     'Star Pendant', 
+    'Weak. Policy',
 ]);
 var DPP = ADV.concat([
     'Adamant Orb',
