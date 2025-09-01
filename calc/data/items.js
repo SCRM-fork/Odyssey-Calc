@@ -127,6 +127,7 @@ var GSC = [
     'Stick',
     'Sun Stone',
     'Thick Club',
+    'Bone Piercer',
     'Thunder Stone',
     'Twisted Spoon',
     'Ultra Ball',

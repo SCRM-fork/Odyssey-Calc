@@ -119,6 +119,8 @@ function calculateADV(gen, attacker, defender, move, field) {
     if ((defender.hasAbility('Flash Fire') && move.hasType('Fire')) ||
         (defender.hasAbility('Levitate') && move.hasType('Ground')) ||
         (defender.hasAbility('Volt Absorb') && move.hasType('Electric')) ||
+        (defender.hasAbility('Lightning Rod') && move.hasType('Electric')) ||
+        (defender.hasAbility('Lightningrod') && move.hasType('Electric')) ||
         (defender.hasAbility('Water Absorb') && move.hasType('Water')) ||
         (defender.hasAbility('Wonder Guard') && !move.hasType('???') && typeEffectiveness <= 1) ||
         (defender.hasAbility('Soundproof') && move.flags.sound)) {
@@ -243,6 +245,15 @@ function calculateADV(gen, attacker, defender, move, field) {
                 bp = move.bp * 2;
             }
             break;
+        case 'Knock Off':
+            if (defender.item) {
+                bp = move.bp * 1.5;
+            }
+            break;
+        // case 'Triple Axel':
+        //     basePower = move.hits === 2 ? 30 : move.hits === 3 ? 40 : 20;
+        //     desc.moveBP = basePower;
+        //     break;
         case 'Titan Killer':
             bp = Math.floor((defender.curHP() * 150) / defender.maxHP());
             break;
@@ -310,7 +321,8 @@ function calculateADV(gen, attacker, defender, move, field) {
     }
     else if ((!isPhysical && attacker.hasItem('Deep Sea Tooth') && attacker.named('Clamperl')) ||
         (!isPhysical && attacker.hasItem('Light Ball') && attacker.named('Pikachu')) ||
-        (isPhysical && attacker.hasItem('Thick Club') && attacker.named('Cubone', 'Marowak'))) {
+        (isPhysical && attacker.hasItem('Thick Club') && attacker.named('Cubone', 'Marowak')) ||
+        (isPhysical && attacker.hasItem('Bone Piercer') && attacker.named('Cubone', 'Marowak'))) {
         at *= 2;
         desc.attackerItem = attacker.item;
     }
@@ -333,6 +345,25 @@ function calculateADV(gen, attacker, defender, move, field) {
     if (attacker.hasItem('Expert Belt') && typeEffectiveness > 1) {
         at = Math.floor(at * 1.2);
         desc.attackerItem = attacker.item;
+    }
+    if (defender.hasAbility('Multiscale') && defender.curHP() === defender.maxHP() &&
+        !field.defenderSide.isSR && (!field.defenderSide.spikes || defender.hasType('Flying')) &&
+        !attacker.hasAbility('Parental Bond (Child)')) {
+        df = Math.floor(df * 2);
+        desc.defenderAbility = defender.ability;
+    }
+    if ((attacker.hasAbility('Technician') && move.bp <= 60)) {
+        at = Math.floor(at * 1.5);
+        desc.attackerAbility = attacker.ability;
+    }
+
+    if (defender.hasAbility('Filter', 'Solid Rock') && typeEffectiveness > 1) {
+        at = Math.floor(at * 0.75);
+        desc.defenderAbility = defender.ability;
+    }
+    if (field.hasWeather('Sand') && defender.hasType('Rock') && !isPhysical) {
+        df = Math.floor(df * 1.5);
+        desc.weather = field.weather;
     }
     else if ((!isPhysical && defender.hasItem('Deep Sea Scale') && defender.named('Clamperl')) ||
         (isPhysical && defender.hasItem('Metal Powder') && defender.named('Ditto'))) {
@@ -361,10 +392,10 @@ function calculateADV(gen, attacker, defender, move, field) {
         bp = Math.floor(bp * 1.5);
         desc.attackerAbility = attacker.ability;
     }
-    if (move.named('Explosion', 'Self-Destruct', 'Misty Explosion')) {
-        console.log("asdf")
-        df = Math.floor(df / 2);
-    }
+    // if (move.named('Explosion', 'Self-Destruct', 'Misty Explosion')) {
+    //     console.log("asdf")
+    //     df = Math.floor(df / 2);
+    // }
     var isCritical = move.isCrit && !defender.hasAbility('Battle Armor', 'Shell Armor');
     var attackBoost = attacker.boosts[attackStat];
     var defenseBoost = defender.boosts[defenseStat];
@@ -481,7 +512,7 @@ function calculateADV(gen, attacker, defender, move, field) {
     // }
     baseDamage = (move.category === 'Physical' ? Math.max(1, baseDamage) : baseDamage) + 2;
     if (isCritical) {
-        baseDamage *= 2;
+        baseDamage *= 1.5;
         desc.isCritical = true;
     }
     if (move.named('Weather Ball') && field.weather) {

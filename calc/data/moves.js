@@ -639,6 +639,38 @@ var RBY = {
         makesContact: true,
         category: 'Physical'
     },
+    'Poweruppunch': {
+        bp: 40,
+        type: 'Fighting',
+        makesContact: true,
+        isPunch: true,
+        category: 'Physical',
+        secondaries: true
+    },
+    'Water Tackle': {
+        bp: 65,
+        type: 'Water',
+        makesContact: true,
+        category: 'Physical'
+    },
+    'Mystical Fire': {
+        bp: 75,
+        type: 'Fire',
+        category: 'Special',
+        secondaries: true
+    },
+    'First Press': {
+        bp: 90,
+        type: 'Bug',
+        category: 'Physical'
+    },
+    'Triple Axel': {
+        bp: 40,
+        type: 'Ice',
+        category: 'Physical',
+        makesContact: true,
+        multihit: 3
+    },
     'Water Gun': { bp: 40, type: 'Water' },
     Withdraw: { bp: 0, category: 'Status', type: 'Water' }
 };
@@ -4183,15 +4215,15 @@ var SS_PATCH = {
         zp: 160,
         maxPower: 130
     },
-    'Triple Axel': {
-        bp: 20,
-        type: 'Ice',
-        category: 'Physical',
-        makesContact: true,
-        multihit: 3,
-        zp: 120,
-        maxPower: 140
-    },
+    // 'Triple Axel': {
+    //     bp: 20,
+    //     type: 'Ice',
+    //     category: 'Physical',
+    //     makesContact: true,
+    //     multihit: 3,
+    //     zp: 120,
+    //     maxPower: 140
+    // },
     'Wicked Blow': {
         bp: 80,
         type: 'Dark',
