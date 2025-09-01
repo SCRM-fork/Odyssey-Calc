@@ -511,9 +511,19 @@ function calculateADV(gen, attacker, defender, move, field) {
     //     desc.attackerAbility = 'Singularity';
     // }
     baseDamage = (move.category === 'Physical' ? Math.max(1, baseDamage) : baseDamage) + 2;
+    // if (isCritical) {
+    //     baseDamage *= 1.5;
+    //     desc.isCritical = true;
+    // }
     if (isCritical) {
-        baseDamage *= 1.5;
-        desc.isCritical = true;
+        if (attacker.hasAbility('Sniper')) {
+            baseDamage *= 2;
+            desc.attackerAbility = attacker.ability;
+        }
+        else {
+            baseDamage *= 1.5;
+        }
+        desc.isCritical = isCritical;
     }
     if (move.named('Weather Ball') && field.weather) {
         baseDamage *= 2;
