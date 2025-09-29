@@ -319,6 +319,10 @@ function calculateADV(gen, attacker, defender, move, field) {
         at = Math.floor(at * 1.5);
         desc.attackerItem = attacker.item;
     }
+    else if ((!isPhysical && attacker.hasItem('Choice Specs'))) {
+        at = Math.floor(at * 1.5);
+        desc.attackerItem = attacker.item;
+    }
     else if ((!isPhysical && attacker.hasItem('Deep Sea Tooth') && attacker.named('Clamperl')) ||
         (!isPhysical && attacker.hasItem('Light Ball') && attacker.named('Pikachu')) ||
         (isPhysical && attacker.hasItem('Thick Club') && attacker.named('Cubone', 'Marowak')) ||
@@ -557,7 +561,11 @@ function calculateADV(gen, attacker, defender, move, field) {
         baseDamage = Math.floor(baseDamage * 1.5);
     }
     if (move.hasType.apply(move, __spreadArray([], __read(attacker.types), false))) {
-        baseDamage = Math.floor(baseDamage * 1.5);
+        if (attacker.hasAbility('Adaptability')) {
+            baseDamage = Math.floor(baseDamage * 2);
+        } else {
+            baseDamage = Math.floor(baseDamage * 1.5);
+        }
     }
     baseDamage = Math.floor(baseDamage * typeEffectiveness);
     result.damage = [];
